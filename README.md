@@ -14,7 +14,10 @@
 
 ##### A user will be able to create an account which includes their address. With the user's address supplied, the app will display the user's city represenative, state sentator, federal representative, and two federal senators. The user will be able to see more details on their reps, including legislation they sponsor or co-sponsor. The user will be able to create a list of legislation they want to follow. Also, users can create action items: call/email rep, attend townhall meeting, attend rally, etc. Additionally, users will be able to search for legislation nation-wide, and will be able to add any legislation to their tracked list.
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/696c94e3-c479-44db-afcd-71f2f2e10ea8" id="zHmRkihdyrrI"></iframe></div>
+Component Hierarchy ![https://i.imgur.com/iPFPKE1.jpg]
+
+Entity-Relationship Diagram ![https://i.imgur.com/hZkWJsU.jpg]
+
 
 
 ### **_Technologies Used_**
