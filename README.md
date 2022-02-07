@@ -12,7 +12,7 @@
 
 #### My So-Called Civic Life lets users find their local, state, and federal representatives to learn about their current work and legislation. Users can also create action items to stay civically engaged.
 
-##### A user will be able to create an account which includes their address. With the user's address supplied, the app will display the user's city represenative, state sentator, federal representative, and two federal senators. The user will be able to see more details on their reps, including legislation they sponsor or co-sponsor. The user will be able to create a list of legislation they want to follow. Also, users can create action items: call/email rep, attend townhall meeting, attend rally, etc. Additionally, users will be able to search for legislation nation-wide, and will be able to add any legislation to their tracked list.
+##### A user will be able to create an account which includes their address. With the user's address supplied, the app will display the user's city council rep, state sentator, state rep, federal rep, and two federal senators. The user will be able to see more details on their reps, including legislation they sponsor or co-sponsor. The user will be able to create a list of legislation they want to follow. Also, users can create action items: call/email rep, attend townhall meeting, attend rally, etc. Additionally, users will be able to search for legislation nation-wide, and will be able to add any legislation to their tracked list.
 
 #### Component Hierarchy ![CHD](https://i.imgur.com/iPFPKE1.jpg)
 
