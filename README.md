@@ -40,7 +40,7 @@ The app will use the [Google Civic Information API](https://developers.google.co
 ### **_Future tasks_**
 
 - Enable authentication
-- Use a UI library, like [Vuetify](https://vuetifyjs.com/en/)
+- Use a UI library, like [VueTailwind](https://www.vue-tailwind.com/)
 
 ---
 
