@@ -30,7 +30,7 @@ Each table/model will have full CRUD operations
 
 ### **_Resources Used_**
 
-The app will use the [Google Civic Information API](https://developers.google.com/civic-information) to find the user's representatives. The app will also use [LegisScan API](https://legiscan.com/legiscan), which tracks legislation.
+The app will use the [Google Civic Information API](https://developers.google.com/civic-information) to find the user's representatives. The app will also use [LegisScan API](https://legiscan.com/legiscan) and [GovInfo](https://api.govinfo.gov/docs/), which tracks state and federal legislation.
 
 
 ### **_Getting Started_**
@@ -51,6 +51,8 @@ The app will use the [Google Civic Information API](https://developers.google.co
 [Google Civic Information API](https://developers.google.com/civic-information)
 
 [LegisScan API](https://legiscan.com/legiscan)
+
+[GovInfo](https://api.govinfo.gov/docs/)
 
 
 
