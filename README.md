@@ -16,7 +16,9 @@
 
 #### Component Hierarchy ![CHD](https://i.imgur.com/iPFPKE1.jpg)
 
-#### Entity-Relationship Diagram ![ERD](https://i.imgur.com/hZkWJsU.jpg)
+#### Entity-Relationship Diagram
+Each table/model will have full CRUD operations
+![ERD](https://i.imgur.com/hZkWJsU.jpg)
 
 
 
