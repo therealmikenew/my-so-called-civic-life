@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>User Profile</h1>
-        <Form :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code="zip_code" @handleFormChange="handleFormChange" @handleSubmit="handleSubmit"/>
+        <Form :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code=parseInt.zip_code @handleFormChange="handleFormChange" @handleSubmit="handleSubmit"/>
     </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
                 street_address: this.street_address,
                 city: this.city,
                 state: this.state,
-                zip_code: parseInt(this.zip_code)
+                zip_code: this.zip_code
             })
         }
         
