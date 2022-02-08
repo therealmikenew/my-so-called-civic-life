@@ -17,10 +17,9 @@
 #### Component Hierarchy ![CHD](https://i.imgur.com/iPFPKE1.jpg)
 
 #### Entity-Relationship Diagram
+
 Each table/model will have full CRUD operations
 ![ERD](https://i.imgur.com/hZkWJsU.jpg)
-
-
 
 ### **_Technologies Used_**
 
@@ -32,18 +31,15 @@ Each table/model will have full CRUD operations
 
 The app will use the [Google Civic Information API](https://developers.google.com/civic-information) to find the user's representatives. The app will also use [LegisScan API](https://legiscan.com/legiscan) and [GovInfo](https://api.govinfo.gov/docs/), which tracks state and federal legislation.
 
-
 ### **_Getting Started_**
 
 #### Repo to [backend](https://github.com/therealmikenew/my-so-called-civic-life-backend)
 
-
 #### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/FsDopsjn/my-so-called-civic-life).
-
 
 ### **_Future tasks_**
 
-- Enable authentication
+- Enable [Django authentication](https://www.django-rest-framework.org/api-guide/authentication/#authentication)
 - Use a UI library, like [VueTailwind](https://www.vue-tailwind.com/)
 
 ---
@@ -55,6 +51,3 @@ The app will use the [Google Civic Information API](https://developers.google.co
 [LegisScan API](https://legiscan.com/legiscan)
 
 [GovInfo](https://api.govinfo.gov/docs/)
-
-
-
