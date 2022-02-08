@@ -1,5 +1,5 @@
 import VueRouter from "vue-router";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import MyLegislation from "./components/MyLegislation";
 import MyActions from "./components/MyActions";
 import LegislationDetail from "./components/LegislationDetail";

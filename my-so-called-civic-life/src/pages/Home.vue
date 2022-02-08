@@ -5,27 +5,29 @@
 
      <div class="container">
          <UserProfile/>
+        
         <CivicLeaders/>
      </div>
     
 </div>
 
-
-
-   
-
-
 </template>
 
 <script>
-import UserProfile from './UserProfile.vue'
-import CivicLeaders from './CivicLeaders.vue'
+import UserProfile from '../components/UserProfile.vue'
+
+import CivicLeaders from '../components/CivicLeaders.vue'
 
 export default {
     name: 'Home',
     components: {
         UserProfile,
+       
         CivicLeaders
+    }, 
+   
+    methods: {
+        
     }
 }
 </script>
