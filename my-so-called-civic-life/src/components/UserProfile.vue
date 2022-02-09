@@ -43,9 +43,7 @@ export default {
         zip_code: null
     }),
     mounted() {
-        this.getProfile()
-        console.log(this.update)
-       
+        this.getProfile()       
     },
     methods: {
 
