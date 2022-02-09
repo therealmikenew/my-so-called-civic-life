@@ -23,7 +23,7 @@
                 <input  @input="handleFormChange($event)" type="number" placeholder="Zip code"
                 :value="zip_code"
                 name="zip_code"/>
-                <button >Create Profile</button>     
+                <button>Create Profile</button>     
             </form>
         </div> 
     </div>
@@ -32,7 +32,7 @@
 <script>
 
 export default {
-    name: 'Form',
+    name: 'CreateForm',
     props: {
         first_name: String,
         last_name: String,
@@ -40,7 +40,8 @@ export default {
         street_address: String,
         city: String,
         state: String,
-        zip_code: Number
+        zip_code: Number,
+        
     },
     methods: {
         handleFormChange(e){
