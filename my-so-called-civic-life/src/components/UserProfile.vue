@@ -6,8 +6,8 @@
             <h3>{{profile.street_address}}</h3>
             <h3>{{profile.city}} {{profile.state}}</h3>
             <h3>{{profile.zip_code}}</h3>
-            <button @click='toggleUpdate'>Toggle update profile</button>
-            <button>Delete profile</button>
+            <button @click='toggleUpdate'>Update profile</button>
+            <button @click="handleDelete">Delete profile</button>
         </div>
         <div v-else-if='!profile && !update'>
             <CreateForm :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code=parseInt.zip_code @handleCreateFormChange="handleCreateFormChange" @handleSubmit="handleSubmit" />
@@ -15,7 +15,7 @@
         <div v-else>
             <UpdateForm :first_name="profile.first_name" :last_name="profile.last_name" :profile_URL="profile.profile_URL" :street_address="profile.street_address" :city="profile.city" :state="profile.state" :zip_code="profile.zip_code" @handleFormChange="handleFormChange" @handleUpdate="handleUpdate"/>
             
-            <button @click='toggleUpdate'>Toggle update profile</button>
+            <button @click='toggleUpdate'>Back to Profile</button>
 
         </div>
 
@@ -44,6 +44,7 @@ export default {
     }),
     mounted() {
         this.getProfile()
+        console.log(this.update)
        
     },
     methods: {
@@ -54,6 +55,7 @@ export default {
 
         handleUpdate (){
             this.updateUser()
+            
         },
 
         async updateUser (){
@@ -65,6 +67,7 @@ export default {
                 city: this.profile.city,
                 state: this.profile.state,
                 zip_code: this.profile.zip_code})
+                this.toggleUpdate()
 
         },
 
@@ -84,6 +87,13 @@ export default {
         handleSubmit() {
             this.createUser()
         },
+
+        handleDelete(){
+            this.deleteUser()
+            window.location.reload()
+            
+            
+        },
         async createUser() {
             await axios.post('http://localhost:8000/user/', {
                 first_name: this.first_name,
@@ -95,6 +105,11 @@ export default {
                 zip_code: this.zip_code
             })
             window.location.reload()
+        },
+
+        async deleteUser() {
+            await axios.delete(`http://127.0.0.1:8000/user/${this.profile.id}`)
+            
         }
         
         
