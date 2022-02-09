@@ -2,25 +2,25 @@
     <div>
         <div class='form-container'>
             <form class='form' v-on:submit.prevent='handleSubmit'>
-                <input  @input="handleFormChange($event)" type="text" placeholder="First name"
+                <input  @input="handleCreateFormChange($event)" type="text" placeholder="First name"
                 :value="first_name"
                 name="first_name"/>
-                <input   @input="handleFormChange($event)" type="text" placeholder="Last name"
+                <input   @input="handleCreateFormChange($event)" type="text" placeholder="Last name"
                 :value="last_name"
                 name="last_name"/>
-                <input  @input="handleFormChange($event)" type="text" placeholder="Photo URL"
+                <input  @input="handleCreateFormChange($event)" type="text" placeholder="Photo URL"
                 :value="profile_URL"
                 name="profile_URL"/>
-                <input  @input="handleFormChange($event)" type="text" placeholder="Street address"
+                <input  @input="handleCreateFormChange($event)" type="text" placeholder="Street address"
                 :value="street_address"
                 name="street_address"/>
-                <input   @input="handleFormChange($event)" type="text" placeholder="City"
+                <input   @input="handleCreateFormChange($event)" type="text" placeholder="City"
                 :value="city"
                 name="city"/>
-                <input  @input="handleFormChange($event)" type="text" placeholder="State"
+                <input  @input="handleCreateFormChange($event)" type="text" placeholder="State"
                 :value="state"
                 name="state"/>
-                <input  @input="handleFormChange($event)" type="number" placeholder="Zip code"
+                <input  @input="handleCreateFormChange($event)" type="number" placeholder="Zip code"
                 :value="zip_code"
                 name="zip_code"/>
                 <button>Create Profile</button>     
@@ -44,8 +44,8 @@ export default {
         
     },
     methods: {
-        handleFormChange(e){
-            this.$emit('handleFormChange', e.target.name, e.target.value)
+        handleCreateFormChange(e){
+            this.$emit('handleCreateFormChange', e.target.name, e.target.value)
         },
         handleSubmit(e) {
             e.preventDefault()
