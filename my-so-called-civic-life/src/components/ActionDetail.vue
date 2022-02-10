@@ -2,7 +2,9 @@
 
 <div><h1>{{action.description}}</h1>
 <h2>Date: {{action.date}}</h2>
-<p>{{action.notes}}</p></div>
+<p>{{action.notes}}</p>
+<button @click='handleDelete'>Delete Action</button></div>
+
     
     
 </template>
@@ -22,10 +24,19 @@ export default {
     },
     methods: {
 
+        handleDelete(){
+            this.deleteAction()
+            this.$router.push(`/my-actions`)
+        },
+
         async getAction(){
              const res = await axios.get(`http://localhost:8000/action/${this.actionId}`)
              console.log(res.data)
              this.action = res.data
+        },
+        async deleteAction(){
+            await axios.delete(`http://127.0.0.1:8000/action/${this.actionId}`)
+
         }
        
 
