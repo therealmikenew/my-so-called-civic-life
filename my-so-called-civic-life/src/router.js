@@ -4,6 +4,7 @@ import MyLegislation from "./pages/MyLegislation.vue";
 import MyActions from "./pages/MyActions";
 import LegislationDetail from "./components/LegislationDetail";
 import ActionDetail from "./components/ActionDetail";
+import CreateActionForm from "./pages/CreateActionForm";
 
 const routes = [
   { path: "/", component: Home, name: "Home" },
@@ -18,6 +19,11 @@ const routes = [
     path: "/my-actions/:action_id",
     component: ActionDetail,
     name: "ActionDetail",
+  },
+  {
+    path: "/action-form",
+    component: CreateActionForm,
+    name: "CreateActionForm",
   },
 ];
 
