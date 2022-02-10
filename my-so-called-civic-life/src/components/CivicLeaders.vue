@@ -1,11 +1,11 @@
 <template>
 <div>
      <h1>Civic Leaders</h1>
-    <h2>My Federal Representative</h2>
-    <h3>{{fedRepOfficials.name}}</h3>
-    <h4>{{fedRepOfficials.party}}</h4>
-    <div v-for='url in fedRepUrls' :key='url.id'>
-        <li>{{url}}</li>
+        <h2>My Federal Representative</h2>
+            <h3>{{fedRepOfficials.name}}</h3>
+                <h4>{{fedRepOfficials.party}}</h4>
+                    <div v-for='url in fedRepUrls' :key='url.id'>
+                        <li>{{url}}</li>
     </div>
 
     <h2>My Federal Senators</h2>
