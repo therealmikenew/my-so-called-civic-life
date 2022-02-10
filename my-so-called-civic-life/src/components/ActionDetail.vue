@@ -31,7 +31,6 @@ export default {
 
         async getAction(){
              const res = await axios.get(`http://localhost:8000/action/${this.actionId}`)
-             console.log(res.data)
              this.action = res.data
         },
         async deleteAction(){
