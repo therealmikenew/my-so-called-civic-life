@@ -1,11 +1,10 @@
 <template>
 
 <div >
-     <h1>HOME</h1>
+     <h1>User Panel</h1>
 
      <div class="container">
-         <UserProfile/>
-        
+        <UserProfile/>
         <CivicLeaders/>
      </div>
     
@@ -22,7 +21,6 @@ export default {
     name: 'Home',
     components: {
         UserProfile,
-       
         CivicLeaders
     }, 
    

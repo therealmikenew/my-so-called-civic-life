@@ -1,6 +1,7 @@
 <template>
 <div>
     <h1>My Actions</h1>
+    <button @click="goToActionForm">Create New Action</button>
     <div v-for='action in actions' :key='action.id'>
         <h2 @click="selectAction(action.id)">{{action.description}}</h2>
     </div>
@@ -27,7 +28,11 @@ export default {
         },
         selectAction(id){
             this.$router.push(`/my-actions/${id}`)
+        },
+        goToActionForm(){
+            this.$router.push('/action-form')
         }
+
     }
     
 }
