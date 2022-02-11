@@ -1,7 +1,7 @@
 <template>
 
 <div><h1>{{action.description}}</h1>
-<h2>Date: {{action.date}}</h2>
+<h2>Date {{action.date}}</h2>
 <p>{{action.notes}}</p>
 <button @click='handleDelete'>Delete Action</button></div>
 
