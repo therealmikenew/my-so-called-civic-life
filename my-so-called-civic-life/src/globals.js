@@ -1,4 +1,4 @@
 export const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? `${window.location.origin}`
+    ? "https://my-so-called-backend.herokuapp.com"
     : "http://localhost:8000";
