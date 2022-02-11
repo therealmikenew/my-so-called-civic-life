@@ -1,6 +1,6 @@
 <template>
 <div>
-     <h1>Civic Leaders</h1>
+     <h1>Civic Leaders!!!</h1>
         <h2>My Federal Representative</h2>
             <h3>{{fedRepOfficials.name}}</h3>
                 <h4>{{fedRepOfficials.party}}</h4>
@@ -61,6 +61,7 @@ export default {
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.fedRepOfficials = res.data.officials[0]
             this.fedRepUrls = res.data.officials[0].urls
+            console.log(res.data.officials[0])
         },
         async getFedSens(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorUpperBody&key=${GOOGLE_API_KEY}`)
