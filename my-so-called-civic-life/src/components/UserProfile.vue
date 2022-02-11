@@ -26,7 +26,7 @@
 import axios from 'axios'
 import CreateForm from './CreateForm.vue'
 import UpdateForm from './UpdateForm.vue'
-import BASE_URL from '../globals'
+import {BASE_URL} from '../globals'
 export default {
     name: 'UserProfile',
     components: {

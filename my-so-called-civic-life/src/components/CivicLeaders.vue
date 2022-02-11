@@ -28,7 +28,7 @@
 
 <script>
 import axios from 'axios'
-import BASE_URL from '../globals'
+import {BASE_URL} from '../globals'
 const GOOGLE_API_KEY = process.env.VUE_APP_GOOGLE_KEY
 
 

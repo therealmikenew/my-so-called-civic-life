@@ -13,7 +13,7 @@
 
 <script>
 import axios from 'axios'
-import BASE_URL from '../globals'
+import {BASE_URL} from '../globals'
 export default {
     name: 'MyActions', 
     data: ()=> ({
