@@ -11,6 +11,7 @@
 
 <script>
 import axios from 'axios'
+import BASEURL from '../globals'
 export default {
     name: 'ActionDetail',
     data: ()=> ({
@@ -30,11 +31,11 @@ export default {
         },
 
         async getAction(){
-             const res = await axios.get(`http://localhost:8000/action/${this.actionId}`)
+             const res = await axios.get(`${BASEURL}/action/${this.actionId}`)
              this.action = res.data
         },
         async deleteAction(){
-            await axios.delete(`http://127.0.0.1:8000/action/${this.actionId}`)
+            await axios.delete(`${BASEURL}/action/${this.actionId}`)
 
         }
        

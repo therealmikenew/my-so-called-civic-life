@@ -28,7 +28,9 @@
 
 <script>
 import axios from 'axios'
+import BASEURL from '../globals'
 const GOOGLE_API_KEY = process.env.VUE_APP_GOOGLE_KEY
+
 
 export default {
     name: 'CivicLeaders',
@@ -48,7 +50,7 @@ export default {
     },
     methods: {
          async getAddressCity(){
-            const res = await axios.get('http://127.0.0.1:8000/user/') 
+            const res = await axios.get(`${BASEURL}/user/`) 
             this.street_address = res.data[0].street_address
             this.city = res.data[0].city
             this.getFedRep()

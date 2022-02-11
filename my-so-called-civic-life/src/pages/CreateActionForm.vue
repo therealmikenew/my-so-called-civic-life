@@ -17,7 +17,7 @@
 
 <script>
 import axios from 'axios'
-
+import BASEURL from '../globals'
 export default {
     name: 'CreateActionForm',
     data: ()=> ({
@@ -32,7 +32,7 @@ export default {
     methods: {
 // to get user_id
          async getProfile(){
-            const res = await axios.get('http://127.0.0.1:8000/user/') 
+            const res = await axios.get(`${BASEURL}/user/`) 
             this.profileId = res.data[0].id
         },
 
@@ -48,7 +48,7 @@ export default {
 
         },
         async createAction() {
-            await axios.post(`http://127.0.0.1:8000/action/`, {
+            await axios.post(`${BASEURL}/action/`, {
                 date: this.date,
                 description: this.description,
                 notes: this.notes,
@@ -59,9 +59,6 @@ export default {
         }
 
     }
-    
-   
-
-    
+        
 }
 </script>

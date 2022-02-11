@@ -26,6 +26,7 @@
 import axios from 'axios'
 import CreateForm from './CreateForm.vue'
 import UpdateForm from './UpdateForm.vue'
+import BASEURL from '../globals'
 export default {
     name: 'UserProfile',
     components: {
@@ -57,7 +58,7 @@ export default {
         },
 
         async updateUser (){
-            await axios.put(`http://127.0.0.1:8000/user/${this.profile.id}`, { 
+            await axios.put(`${BASEURL}/user/${this.profile.id}`, { 
                 first_name: this.profile.first_name,
                 last_name: this.profile.last_name,
                 profile_URL: this.profile.profile_URL,
@@ -70,7 +71,7 @@ export default {
         },
 
         async getProfile(){
-            const res = await axios.get('http://127.0.0.1:8000/user/') 
+            const res = await axios.get(`${BASEURL}/user/`) 
             this.profile = res.data[0]
         },
         handleFormChange(name, value) {
@@ -93,7 +94,7 @@ export default {
             
         },
         async createUser() {
-            await axios.post('http://localhost:8000/user/', {
+            await axios.post(`${BASEURL}/user/`, {
                 first_name: this.first_name,
                 last_name: this.last_name,
                 profile_URL: this.profile_URL,
@@ -106,14 +107,10 @@ export default {
         },
 
         async deleteUser() {
-            await axios.delete(`http://127.0.0.1:8000/user/${this.profile.id}`)
+            await axios.delete(`${BASEURL}/user/${this.profile.id}`)
             
         }
         
-        
-        
-
-
     }
    
 }
