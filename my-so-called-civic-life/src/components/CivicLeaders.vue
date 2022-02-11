@@ -60,17 +60,16 @@ export default {
         async getFedRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.fedRepOfficials = res.data.officials[0]
-           
             this.fedRepUrls = res.data.officials[0].urls
         },
         async getFedSens(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorUpperBody&key=${GOOGLE_API_KEY}`)
-            this.fedSenOfficials = res.data.officials          
+            this.fedSenOfficials = res.data.officials  
+                    
         },
         async getCityRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=locality&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.cityRep = res.data.officials
-            console.log(this.cityRep)
         }
 
     }
