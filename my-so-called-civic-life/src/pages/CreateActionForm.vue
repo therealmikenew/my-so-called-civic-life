@@ -17,7 +17,7 @@
 
 <script>
 import axios from 'axios'
-import BASEURL from '../globals'
+import BASE_URL from '../globals'
 export default {
     name: 'CreateActionForm',
     data: ()=> ({
@@ -32,7 +32,7 @@ export default {
     methods: {
 // to get user_id
          async getProfile(){
-            const res = await axios.get(`${BASEURL}/user/`) 
+            const res = await axios.get(`${BASE_URL}/user/`) 
             this.profileId = res.data[0].id
         },
 
@@ -48,7 +48,7 @@ export default {
 
         },
         async createAction() {
-            await axios.post(`${BASEURL}/action/`, {
+            await axios.post(`${BASE_URL}/action/`, {
                 date: this.date,
                 description: this.description,
                 notes: this.notes,

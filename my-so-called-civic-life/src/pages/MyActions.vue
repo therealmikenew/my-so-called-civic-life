@@ -13,7 +13,7 @@
 
 <script>
 import axios from 'axios'
-import BASEURL from '../globals'
+import BASE_URL from '../globals'
 export default {
     name: 'MyActions', 
     data: ()=> ({
@@ -24,7 +24,7 @@ export default {
     },
     methods: {
         async getActions(){
-            const res = await axios.get(`${BASEURL}/action/`)
+            const res = await axios.get(`${BASE_URL}/action/`)
             this.actions = res.data 
         },
         selectAction(id){
