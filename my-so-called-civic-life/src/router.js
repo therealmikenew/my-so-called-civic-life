@@ -5,6 +5,7 @@ import MyActions from "./pages/MyActions";
 import LegislationDetail from "./components/LegislationDetail";
 import ActionDetail from "./components/ActionDetail";
 import CreateActionForm from "./pages/CreateActionForm";
+import CivicLeaderDetail from "./components/CivicLeaderDetail";
 
 const routes = [
   { path: "/", component: Home, name: "Home" },
@@ -24,6 +25,11 @@ const routes = [
     path: "/action-form",
     component: CreateActionForm,
     name: "CreateActionForm",
+  },
+  {
+    path: "/civic-leader/:civic_leader_id",
+    component: CivicLeaderDetail,
+    name: "CivicLeaderDetail",
   },
 ];
 

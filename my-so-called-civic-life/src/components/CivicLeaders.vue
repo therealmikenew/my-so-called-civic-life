@@ -1,8 +1,8 @@
 <template>
 <div>
-     <h1>Civic Leaders!!!</h1>
-        <h2>My Federal Representative</h2>
-            <h3>{{fedRepOfficials.name}}</h3>
+     <h1>Civic Leaders</h1>
+        <h2 >My Federal Representative</h2>
+            <h3 @click='selectRep(fedRepOfficials.name)'>{{fedRepOfficials.name}}</h3>
             <img :src="fedRepOfficials.photoUrl" alt="no photo">
                 <h4>{{fedRepOfficials.party}}</h4>
                     <div v-for='url in fedRepUrls' :key='url.id'>
@@ -84,11 +84,12 @@ export default {
             this.getStateSen()
             this.getStateRep()
             this.getCityRep()
-            this.getLegislation()
+            
         },
         async getFedRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.fedRepOfficials = res.data.officials[0]
+            console.log(res.data.officials)
             this.fedRepUrls = res.data.officials[0].urls
             
         },
@@ -110,6 +111,10 @@ export default {
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}includeOffices=true&levels=administrativearea1&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.stateRep = res.data.officials[0]
         },
+        selectRep(civic_leader_name){
+            console.log('working?')
+            this.$router.push(`/civic-leader/${civic_leader_name}`)
+        }
 
 
 
