@@ -13,7 +13,7 @@
             <CreateForm :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code=parseInt.zip_code @handleCreateFormChange="handleCreateFormChange" @handleSubmit="handleSubmit" />
         </div>
         <div v-else>
-            <UpdateForm :first_name="profile.first_name" :last_name="profile.last_name" :profile_URL="profile.profile_URL" :street_address="profile.street_address" :city="profile.city" :state="profile.state" :zip_code="profile.zip_code" @handleFormChange="handleFormChange" @handleUpdate="handleUpdate"/>
+            <UpdateForm :first_name="profile.first_name" :last_name="profile.last_name" :profile_URL="profile.profile_URL" :street_address="profile.street_address" :city="profile.city" :state="profile.state" :zip_code='profile.zip_code' @handleFormChange="handleFormChange" @handleUpdate="handleUpdate"/>
             
             <button @click='toggleUpdate'>Back to Profile</button>
 
