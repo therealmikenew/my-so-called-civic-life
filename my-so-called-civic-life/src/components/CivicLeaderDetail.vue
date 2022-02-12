@@ -4,7 +4,7 @@
         <div v-for='bill in repBills' :key='bill.id'>
             <h2>{{bill.short_title}}</h2>
             <h3>Date introduced: {{bill.introduced_date}}</h3>
-            <button>Add to My Legislation</button>
+            <button @click="createLegislation">View Detail</button>
 
         </div>
     </div>
@@ -12,6 +12,7 @@
 
 <script>
 import axios from 'axios'
+import {BASE_URL} from '../globals'
 const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
 export default {
     name: "CivicLeaderDetail",
@@ -27,12 +28,20 @@ export default {
 
     },
     methods: {
+
+        createLegislation(){
+            this.addLegislation()
+            console.log("working?")
+
+        },
+
+
         async getRepDetails(){
             const res = await axios.get(`https://api.propublica.org/congress/v1/117/house/members.json`, {
-            headers: {
-                'X-API-Key': `${PROPUBLICA_API_KEY}`
-            }
-            }
+                headers: {
+                    'X-API-Key': `${PROPUBLICA_API_KEY}`
+                    }
+                }
             )
             this.repInfo = res.data.results[0].members
             let last_name = this.$route.params.civic_leader_id.split(' ')
@@ -43,8 +52,25 @@ export default {
                 'X-API-Key': `${PROPUBLICA_API_KEY}`
             }})
             this.repBills = resp.data.results[0].bills
-           
+            console.log(this.repBills)
+        },
+        async addLegislation(){
+            await axios.post(`${BASE_URL}/legislation/`, {
+ 
+            title: "Test",
+            bill_number: "Test",
+            summary: "test",
+            url: "test",
+            sponsor: "test",
+            cosponsor: "test",
+            date_introduced: "test",
+            user_id: 20
+
+}
+            )
+
         }
+
         
     }
     
