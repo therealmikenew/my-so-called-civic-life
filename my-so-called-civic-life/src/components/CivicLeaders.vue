@@ -20,6 +20,28 @@
         </div>
     </div>
 
+    <h2>My State Senator</h2>
+    <h3>{{stateSen.name}}</h3>
+     <img :src="stateSen.photoUrl" alt="no photo">
+                <h4>{{stateSen.party}}</h4>
+                    <div v-for='url in stateSen.urls' :key='url.id'>
+                        <li>{{url}}</li>
+                    </div>
+
+    <h2>My State Representative</h2>
+
+    <h3>{{stateRep.name}}</h3>
+     <img :src="stateRep.photoUrl" alt="no photo">
+                <h4>{{stateRep.party}}</h4>
+                    <div v-for='url in stateRep.urls' :key='url.id'>
+                        <li>{{url}}</li>
+                    </div>
+
+
+
+
+
+
     <h2>My City Council Member(s)</h2>
     <div v-for="city in cityRep" :key='city.id'>
         <h3>{{city.name}}</h3>
@@ -33,7 +55,7 @@
 import axios from 'axios'
 import {BASE_URL} from '../globals'
 const GOOGLE_API_KEY = process.env.VUE_APP_GOOGLE_KEY
-const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
+//const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
 
 
 export default {
@@ -45,8 +67,10 @@ export default {
         fedRepUrls: [],
         fedSenOfficials: [],
         fedSenUrls: [], 
+        stateSen: [],
+        stateRep: [],
         cityRep: [],
-        legislation: []
+        legislation: [],
     }),
     mounted() {
         this.getAddressCity() 
@@ -60,8 +84,10 @@ export default {
             this.city = res.data[0].city
             this.getFedRep()
             this.getFedSens()
+            this.getStateSen()
+            this.getStateRep()
             this.getCityRep()
-            this.getLegislation()
+            //this.getLegislation()
         },
         async getFedRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
@@ -78,16 +104,30 @@ export default {
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=locality&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.cityRep = res.data.officials
         },
-        async getLegislation(){
-            const res = await axios.get(`https://api.propublica.org/congress/v1/bills/search.json`, {
-                headers: {
-                    'X-API-Key': `${PROPUBLICA_API_KEY}`
-                }
-            })
 
-            let bills = res.data.results[0].bills            
-            this.legislation = bills.filter((ele) => ele.sponsor_name === `${this.fedRepOfficials.name}`)
-        }
+        async getStateSen(){
+            const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}includeOffices=true&levels=administrativearea1&roles=legislatorUpperBody&key=${GOOGLE_API_KEY}`)
+            this.stateSen = res.data.officials[0]
+        },
+        async getStateRep(){
+            const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}includeOffices=true&levels=administrativearea1&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
+            this.stateRep = res.data.officials[0]
+        },
+
+
+
+
+
+        // async getLegislation(){
+        //     const res = await axios.get(`https://api.propublica.org/congress/v1/bills/search.json`, {
+        //         headers: {
+        //             'X-API-Key': `${PROPUBLICA_API_KEY}`
+        //         }
+        //     })
+
+        //     let bills = res.data.results[0].bills            
+        //     this.legislation = bills.filter((ele) => ele.sponsor_name === `${this.fedRepOfficials.name}`)
+        // }
 
     }
 
