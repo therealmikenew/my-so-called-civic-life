@@ -6,8 +6,8 @@
             <h3>{{profile.street_address}}</h3>
             <h3>{{profile.city}} {{profile.state}}</h3>
             <h3>{{profile.zip_code}}</h3>
-            <normal-button @click='toggleUpdate'>Update profile</normal-button>
-            <normal-button @click="handleDelete">Delete profile</normal-button>
+            <button @click='toggleUpdate'>Update profile</button>
+            <button @click="handleDelete">Delete profile</button>
         </div>
         <div v-else-if='!profile && !update'>
             <CreateForm :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code=parseInt.zip_code @handleCreateFormChange="handleCreateFormChange" @handleSubmit="handleSubmit" />
@@ -15,7 +15,7 @@
         <div v-else>
             <UpdateForm :first_name="profile.first_name" :last_name="profile.last_name" :profile_URL="profile.profile_URL" :street_address="profile.street_address" :city="profile.city" :state="profile.state" :zip_code='profile.zip_code' @handleFormChange="handleFormChange" @handleUpdate="handleUpdate"/>
             
-            <normal-button @click='toggleUpdate'>Back to Profile</normal-button>
+            <button @click='toggleUpdate'>Back to Profile</button>
 
         </div>
 
@@ -26,6 +26,7 @@
 import axios from 'axios'
 import CreateForm from './CreateForm.vue'
 import UpdateForm from './UpdateForm.vue'
+
 import {BASE_URL} from '../globals'
 export default {
     name: 'UserProfile',
