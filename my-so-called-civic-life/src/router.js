@@ -6,6 +6,7 @@ import MyActions from "./pages/MyActions";
 import ActionDetail from "./components/ActionDetail";
 import CreateActionForm from "./pages/CreateActionForm";
 import CivicLeaderDetail from "./components/CivicLeaderDetail";
+import Search from "./components/Search";
 
 const routes = [
   { path: "/", component: Home, name: "Home" },
@@ -37,6 +38,7 @@ const routes = [
     component: CivicLeaderDetail,
     name: "CivicLeaderDetail",
   },
+  { path: "/search", component: Search, name: "Search" },
 ];
 
 export default new VueRouter({

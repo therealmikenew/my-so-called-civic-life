@@ -1,38 +1,19 @@
 <template>
-
-
-<div>
-    <h2>Most recent federal (Congress and Senate) in your state</h2>
-    <button @click="showButton">{{this.button_text}}</button>
-
-    <div v-if="this.button_text==='hide'">
-         <div v-for="legis in filteredLegislation" :key=legis.id>
-        <h3>{{legis.short_title}}</h3>
-         </div>
-</div>
-
+    <div>
+        <h1>My Tracked Legislation</h1>
+            <div v-for='myTracked in myTrackedLegislation' :key='myTracked.id'>
+                <h3>{{myTracked.title}}</h3>
+                <button @click="deleteMyLegislation(myTracked.id)">Delete</button>
+            </div>
 
     
-    <h2>20 most recent federal (Congress and Senate)</h2>
-    <button @click="showButton20">{{this.button_20_text}}</button>
-
-    <div v-if="this.button_20_text==='hide'">
-         <div v-for="legis in legislation" :key=legis.id>
-        <h3>{{legis.short_title}}</h3>
-
-    </div>
-
-
-   
-
-    </div>
 </div>
     
 </template>
 
 <script>
 import axios from 'axios'
-//import {BASE_URL} from '../globals'
+import {BASE_URL} from '../globals'
 const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
 
 export default {
@@ -40,16 +21,26 @@ export default {
     data: ()=> ({
         legislation: [],
         filteredLegislation: [],
-      
-        button_20_text: "show",
-        button_text: "show"
+        myTrackedLegislation: [],
+        
 
     }),
     mounted(){
         this.getLegislation()
+        this.getMyLegislation()
 
     },
     methods: {
+
+        async getMyLegislation(){
+            const res = await axios.get(`${BASE_URL}/legislation/`)
+            this.myTrackedLegislation = res.data
+        },
+
+        async deleteMyLegislation(id){
+            await axios.delete(`${BASE_URL}/legislation/${id}`)
+        },
+
         async getLegislation(){
             const res = await axios.get(`https://api.propublica.org/congress/v1/bills/search.json`, {
                 headers: {

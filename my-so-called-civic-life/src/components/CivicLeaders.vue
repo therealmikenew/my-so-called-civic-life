@@ -1,18 +1,18 @@
 <template>
 <div>
-     <h1>Civic Leaders</h1>
-        <h2 >My Federal Representative</h2>
-            <h3 @click='selectRep(fedRepOfficials.name)'>{{fedRepOfficials.name}}</h3>
-            <img :src="fedRepOfficials.photoUrl" alt="no photo">
-                <h4>{{fedRepOfficials.party}}</h4>
-                    <div v-for='url in fedRepUrls' :key='url.id'>
-                        <li>{{url}}</li>
-    </div>
+    <h1>Civic Leaders</h1>
+    <h2 >My Federal Representative</h2>
+    <h3 @click='selectRep(fedRepOfficials.name)'>{{fedRepOfficials.name}}</h3>
+    <img :src="fedRepOfficials.photoUrl" alt="no photo">
+    <h4>{{fedRepOfficials.party}}</h4>
+        <div v-for='url in fedRepUrls' :key='url.id'>
+            <li>{{url}}</li>
+        </div>
 
     <h2>My Federal Senators</h2>
     <div v-for='fedSen in fedSenOfficials' :key='fedSen.id'>
         <h3>{{fedSen.name}}</h3>
-                    <img :src="fedSen.photoUrl" alt="no photo">
+            <img :src="fedSen.photoUrl" alt="no photo">
 
         <h4>{{fedSen.party}}</h4>
         <div v-for='url in fedSen.urls' :key='url.id'>
@@ -22,25 +22,19 @@
 
     <h2>My State Senator</h2>
     <h3>{{stateSen.name}}</h3>
-     <img :src="stateSen.photoUrl" alt="no photo">
-                <h4>{{stateSen.party}}</h4>
-                    <div v-for='url in stateSen.urls' :key='url.id'>
-                        <li>{{url}}</li>
-                    </div>
+    <img :src="stateSen.photoUrl" alt="no photo">
+    <h4>{{stateSen.party}}</h4>
+        <div v-for='url in stateSen.urls' :key='url.id'>
+            <li>{{url}}</li>
+        </div>
 
     <h2>My State Representative</h2>
-
     <h3>{{stateRep.name}}</h3>
-     <img :src="stateRep.photoUrl" alt="no photo">
-                <h4>{{stateRep.party}}</h4>
-                    <div v-for='url in stateRep.urls' :key='url.id'>
-                        <li>{{url}}</li>
-                    </div>
-
-
-
-
-
+    <img :src="stateRep.photoUrl" alt="no photo">
+    <h4>{{stateRep.party}}</h4>
+        <div v-for='url in stateRep.urls' :key='url.id'>
+            <li>{{url}}</li>
+        </div>
 
     <h2>My City Council Member(s)</h2>
     <div v-for="city in cityRep" :key='city.id'>
@@ -48,14 +42,12 @@
         <h4>{{city.party}}</h4>
     </div>
 </div>
-   
 </template>
 
 <script>
 import axios from 'axios'
 import {BASE_URL} from '../globals'
 const GOOGLE_API_KEY = process.env.VUE_APP_GOOGLE_KEY
-
 
 export default {
     name: 'CivicLeaders',
@@ -113,14 +105,6 @@ export default {
         selectRep(civic_leader_name){
             this.$router.push(`/civic-leader/${civic_leader_name}`)
         }
-
-
-
-
-
-        
-
     }
-
 }
 </script>

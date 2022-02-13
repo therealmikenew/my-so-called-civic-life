@@ -1,12 +1,9 @@
 <template>
-
-<div><h1>{{action.description}}</h1>
-<h2>Date {{action.date}}</h2>
-<p>{{action.notes}}</p>
-<button @click='handleDelete'>Delete Action</button></div>
-
-    
-    
+    <div>
+        <h1>{{action.description}}</h1>
+        <h2>Date {{action.date}}</h2>
+        <p>{{action.notes}}</p>
+        <button @click='handleDelete'>Delete Action</button></div>  
 </template>
 
 <script>
@@ -21,10 +18,8 @@ export default {
     mounted(){
         this.actionId = parseInt(this.$route.params.action_id)
         this.getAction()
-
     },
     methods: {
-
         handleDelete(){
             this.deleteAction()
             this.$router.push(`/my-actions`)
@@ -36,10 +31,7 @@ export default {
         },
         async deleteAction(){
             await axios.delete(`${BASE_URL}/action/${this.actionId}`)
-
         }
-       
-
     }
 }
 </script>

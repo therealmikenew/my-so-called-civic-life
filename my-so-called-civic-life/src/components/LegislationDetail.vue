@@ -28,18 +28,13 @@ export default {
     mounted() {
         this.billId = this.$route.params.bill_id
         this.getBillDetails()
-        this.getProfileId()
-        
-       
+        this.getProfileId()  
     },
     methods: {
-
         async getProfileId(){
             const res = await axios.get(`${BASE_URL}/user/`) 
             this.profileId = res.data[0].id
         },
-
-
         async getBillDetails(){
             const res = await axios.get(`https://api.propublica.org/congress/v1/117/bills/${this.billId}.json` , {
                 headers: {
@@ -49,8 +44,7 @@ export default {
                 this.billDetails = res.data.results[0]
         },
          createLegislation(){
-            this.addLegislation()
-          
+            this.addLegislation() 
         },
          async addLegislation(){
             await axios.post(`${BASE_URL}/legislation/`, {
@@ -62,13 +56,9 @@ export default {
                 cosponsor: this.billDetails.cosponsor,
                 date_introduced: this.billDetails.introduced_date,
                 user_id: this.profileId
-            }
-        )
-
+                }
+            )
         },
-
-        
-
     }
     
 }
