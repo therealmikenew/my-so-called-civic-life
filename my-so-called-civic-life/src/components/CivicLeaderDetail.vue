@@ -12,7 +12,7 @@
 
 <script>
 import axios from 'axios'
-import {BASE_URL} from '../globals'
+//import {BASE_URL} from '../globals'
 const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
 export default {
     name: "CivicLeaderDetail",
@@ -29,11 +29,7 @@ export default {
     },
     methods: {
 
-        createLegislation(){
-            this.addLegislation()
-
-        },
-
+       
 
         async getRepDetails(){
             const res = await axios.get(`https://api.propublica.org/congress/v1/117/house/members.json`, {
@@ -51,24 +47,11 @@ export default {
                 'X-API-Key': `${PROPUBLICA_API_KEY}`
             }})
             this.repBills = resp.data.results[0].bills
-            console.log(this.repBills)
         },
-        async addLegislation(){
-            await axios.post(`${BASE_URL}/legislation/`, {
-                title: "Test",
-                bill_number: "Test",
-                summary: "test",
-                url: "test",
-                sponsor: "test",
-                cosponsor: "test",
-                date_introduced: "test",
-                user_id: 20
-            }
-        )
-
-        },
+       
         goToLegisDetail(bill_id){
-            this.$router.push(`/legislation-detail/${bill_id}`)
+            let newBillId = bill_id.split("-")[0]
+            this.$router.push(`/legislation-detail/${newBillId}`)
         }
 
         

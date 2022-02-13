@@ -89,7 +89,6 @@ export default {
         async getFedRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.fedRepOfficials = res.data.officials[0]
-            console.log(res.data.officials)
             this.fedRepUrls = res.data.officials[0].urls
             
         },
@@ -112,7 +111,6 @@ export default {
             this.stateRep = res.data.officials[0]
         },
         selectRep(civic_leader_name){
-            console.log('working?')
             this.$router.push(`/civic-leader/${civic_leader_name}`)
         }
 
