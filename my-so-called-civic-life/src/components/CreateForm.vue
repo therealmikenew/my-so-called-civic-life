@@ -90,7 +90,7 @@
                 <input  @input="handleCreateFormChange($event)" type="number" placeholder="Zip code"
                 :value="zip_code"
                 name="zip_code"/>
-                <button>Create Profile</button>     
+                <submit-button>Create Profile</submit-button>     
             </form>
         </div> 
     </div>

@@ -6,8 +6,8 @@
             <h3>{{profile.street_address}}</h3>
             <h3>{{profile.city}} {{profile.state}}</h3>
             <h3>{{profile.zip_code}}</h3>
-            <button @click='toggleUpdate'>Update profile</button>
-            <button @click="handleDelete">Delete profile</button>
+            <normal-button @click='toggleUpdate'>Update profile</normal-button>
+            <normal-button @click="handleDelete">Delete profile</normal-button>
         </div>
         <div v-else-if='!profile && !update'>
             <CreateForm :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code=parseInt.zip_code @handleCreateFormChange="handleCreateFormChange" @handleSubmit="handleSubmit" />
@@ -15,7 +15,7 @@
         <div v-else>
             <UpdateForm :first_name="profile.first_name" :last_name="profile.last_name" :profile_URL="profile.profile_URL" :street_address="profile.street_address" :city="profile.city" :state="profile.state" :zip_code='profile.zip_code' @handleFormChange="handleFormChange" @handleUpdate="handleUpdate"/>
             
-            <button @click='toggleUpdate'>Back to Profile</button>
+            <normal-button @click='toggleUpdate'>Back to Profile</normal-button>
 
         </div>
 
