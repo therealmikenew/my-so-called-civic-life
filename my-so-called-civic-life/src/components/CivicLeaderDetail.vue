@@ -4,7 +4,7 @@
         <div v-for='bill in repBills' :key='bill.id'>
             <h2>{{bill.short_title}}</h2>
             <h3>Date introduced: {{bill.introduced_date}}</h3>
-            <button @click="createLegislation">View Detail</button>
+            <button @click="goToLegisDetail(bill.bill_id)">View Detail</button>
 
         </div>
     </div>
@@ -31,7 +31,6 @@ export default {
 
         createLegislation(){
             this.addLegislation()
-            console.log("working?")
 
         },
 
@@ -56,19 +55,20 @@ export default {
         },
         async addLegislation(){
             await axios.post(`${BASE_URL}/legislation/`, {
- 
-            title: "Test",
-            bill_number: "Test",
-            summary: "test",
-            url: "test",
-            sponsor: "test",
-            cosponsor: "test",
-            date_introduced: "test",
-            user_id: 20
+                title: "Test",
+                bill_number: "Test",
+                summary: "test",
+                url: "test",
+                sponsor: "test",
+                cosponsor: "test",
+                date_introduced: "test",
+                user_id: 20
+            }
+        )
 
-}
-            )
-
+        },
+        goToLegisDetail(bill_id){
+            this.$router.push(`/legislation-detail/${bill_id}`)
         }
 
         
