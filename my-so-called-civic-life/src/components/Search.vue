@@ -23,6 +23,7 @@
 
 <script>
 import axios from 'axios'
+import {BASE_URL} from '../globals'
 const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
 
 export default {
@@ -31,13 +32,22 @@ export default {
         legislation: [],
         filteredLegislation: [],
         button_20_text: "show",
-        button_text: "show"
+        button_text: "show",
+        profileState: null
 
     }),
     mounted(){
         this.getLegislation()
+        this.getProfile()
     },
     methods: {
+
+        async getProfile(){
+            const res = await axios.get(`${BASE_URL}/user/`) 
+            this.profileState = res.data[0].state
+            console.log(this.profileState)
+            
+        },
 
         async getLegislation(){
             const res = await axios.get(`https://api.propublica.org/congress/v1/bills/search.json`, {
@@ -46,7 +56,7 @@ export default {
                 }
             })
             this.legislation = res.data.results[0].bills
-            this.filteredLegislation = this.legislation.filter((state) => state.sponsor_state === 'TX')
+            this.filteredLegislation = this.legislation.filter((state) => state.sponsor_state === this.profileState )
 
         },
 

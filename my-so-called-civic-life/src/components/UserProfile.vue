@@ -44,7 +44,8 @@ export default {
         zip_code: null
     }),
     mounted() {
-        this.getProfile()       
+        this.getProfile()  
+           
     },
     methods: {
 
