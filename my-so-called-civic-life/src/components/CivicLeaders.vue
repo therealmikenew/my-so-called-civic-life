@@ -3,10 +3,16 @@
     <h1>Civic Leaders</h1>
     <h2 >My Federal Representative</h2>
     <h3 @click='selectRep(fedRepOfficials.name)'>{{fedRepOfficials.name}}</h3>
-    <img :src="fedRepOfficials.photoUrl" alt="no photo">
+
+
+    <div v-if='fedRepOfficials.photoUrl'>
+        <img :src="fedRepOfficials.photoUrl">
+    </div>
+
+    
     <h4>{{fedRepOfficials.party}}</h4>
         <div v-for='url in fedRepUrls' :key='url.id'>
-            <li>{{url}}</li>
+               <a v-bind:href='url' target="_blank">{{url}}</a>
         </div>
 
     <h2>My Federal Senators</h2>
@@ -16,25 +22,38 @@
 
         <h4>{{fedSen.party}}</h4>
         <div v-for='url in fedSen.urls' :key='url.id'>
-            <li>{{url}}</li>
+            
+            <a v-bind:href='url' target="_blank">{{url}}</a>
         </div>
     </div>
 
     <h2>My State Senator</h2>
     <h3>{{stateSen.name}}</h3>
-    <img :src="stateSen.photoUrl" alt="no photo">
+
+
+      <div v-if='fedRepOfficials.photoUrl'>
+         <img :src="stateSen.photoUrl" >
+    </div>
+   
     <h4>{{stateSen.party}}</h4>
         <div v-for='url in stateSen.urls' :key='url.id'>
-            <li>{{url}}</li>
+             <a v-bind:href='url' target="_blank">{{url}}</a>
         </div>
 
     <h2>My State Representative</h2>
     <h3>{{stateRep.name}}</h3>
-    <img :src="stateRep.photoUrl" alt="no photo">
+
+     <div v-if='fedRepOfficials.photoUrl'>
+         <img :src="stateRep.photoUrl" >
+    </div>
+
+    
+   
     <h4>{{stateRep.party}}</h4>
         <div v-for='url in stateRep.urls' :key='url.id'>
-            <li>{{url}}</li>
+               <a v-bind:href='url' target="_blank">{{url}}</a>
         </div>
+
 
     <h2>My City Council Member(s)</h2>
     <div v-for="city in cityRep" :key='city.id'>

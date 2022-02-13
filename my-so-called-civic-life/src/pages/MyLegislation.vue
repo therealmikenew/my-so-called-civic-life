@@ -3,7 +3,7 @@
         <h1>My Tracked Legislation</h1>
             <div v-for='myTracked in myTrackedLegislation' :key='myTracked.id'>
                 <h3>{{myTracked.title}}</h3>
-                <normal-button @click="deleteMyLegislation(myTracked.id)">Delete</normal-button>
+                <button @click="deleteMyLegislation(myTracked.id)">Delete</button>
             </div>
     </div>
     
