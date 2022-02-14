@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h2>Most recent federal (Congress and Senate) in your state</h2>
+    <h2>Most recent federal legislation item in your state</h2>
     <vs-button @click="showButton">{{this.button_text}}</vs-button>
 
     <div v-if="this.button_text==='hide'">
@@ -9,7 +9,7 @@
     </div>
     </div>
 
-    <h2>20 most recent federal (Congress and Senate)</h2>
+    <h2>20 most recent federal legislation items</h2>
     <vs-button @click="showButton20">{{this.button_20_text}}</vs-button>
 
     <div v-if="this.button_20_text==='hide'">

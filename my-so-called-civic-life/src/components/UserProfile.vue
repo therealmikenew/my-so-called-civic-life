@@ -82,6 +82,7 @@ export default {
                 state: this.profile.state,
                 zip_code: this.profile.zip_code})
                 this.toggleUpdate()
+                window.location.reload()
 
         },
 

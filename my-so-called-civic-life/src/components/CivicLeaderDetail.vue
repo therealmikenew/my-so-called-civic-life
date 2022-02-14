@@ -1,6 +1,10 @@
 <template>
+
+
     <div>
         <h1>{{repName}}</h1>
+
+
 
         <div v-if='repInfo.photoUrl'>
         <img :src="repInfo.photoUrl">

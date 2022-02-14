@@ -12,11 +12,6 @@ import Search from "./components/Search";
 const routes = [
   { path: "/", component: Home, name: "Home" },
   { path: "/my-legislation", component: MyLegislation, name: "MyLegislation" },
-  // {
-  //   path: "/my-legislation/:legislation_id",
-  //   component: LegislationDetail,
-  //   name: "LegislationDetail",
-  // },
 
   {
     path: "/legislation-detail/:bill_id",
