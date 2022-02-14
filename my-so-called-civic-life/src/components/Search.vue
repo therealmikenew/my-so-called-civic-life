@@ -5,7 +5,7 @@
 
     <div v-if="this.button_text==='hide'">
          <div v-for="legis in filteredLegislation" :key=legis.id>
-        <h3>{{legis.short_title}}</h3>
+        <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
     </div>
     </div>
 
@@ -14,7 +14,7 @@
 
     <div v-if="this.button_20_text==='hide'">
          <div v-for="legis in legislation" :key=legis.id>
-        <h3>{{legis.short_title}}</h3>
+        <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
     </div>
     </div>
 </div>
@@ -44,9 +44,7 @@ export default {
 
         async getProfile(){
             const res = await axios.get(`${BASE_URL}/user/`) 
-            this.profileState = res.data[0].state
-            console.log(this.profileState)
-            
+            this.profileState = res.data[0].state            
         },
 
         async getLegislation(){
@@ -56,15 +54,20 @@ export default {
                 }
             })
             this.legislation = res.data.results[0].bills
+            console.log(this.legislation)
             this.filteredLegislation = this.legislation.filter((state) => state.sponsor_state === this.profileState )
 
         },
 
-         showButton20(){
+        showButton20(){
             this.button_20_text === 'show' ? this.button_20_text = 'hide' : this.button_20_text = 'show'
         },
         showButton(){
             this.button_text === 'show' ? this.button_text = 'hide' : this.button_text = 'show'
+        },
+        goToLegisDetail(bill_id){
+            let newBillId = bill_id.split("-")[0]
+            this.$router.push(`/legislation-detail/${newBillId}`)
         }
 
 
