@@ -113,7 +113,6 @@ export default {
             this.$emit('handleUpdate')
         }
     }
-
 }
 </script>
 

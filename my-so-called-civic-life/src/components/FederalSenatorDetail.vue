@@ -1,13 +1,13 @@
 <template>
     <div>
         <div>
-        <h1>{{senName}}</h1>
-        <div v-for='bill in senBills' :key='bill.id'>
-            <h2>{{bill.short_title}}</h2>
-            <h3>Date introduced: {{bill.introduced_date}}</h3>
-            <button @click="goToLegisDetail(bill.bill_id)">View Detail</button>
+            <h1>{{senName}}</h1>
+            <div v-for='bill in senBills' :key='bill.id'>
+                <h2>{{bill.short_title}}</h2>
+                <h3>Date introduced: {{bill.introduced_date}}</h3>
+                <button @click="goToLegisDetail(bill.bill_id)">View Detail</button>
+            </div>
         </div>
-    </div>
     </div>
 </template>
 
@@ -49,8 +49,6 @@ export default {
             let newBillId = bill_id.split("-")[0]
             this.$router.push(`/legislation-detail/${newBillId}`)
         }
-        
     }
-    
 }
 </script>

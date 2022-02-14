@@ -37,11 +37,7 @@ export default {
         async getMyLegislation(){
             const res = await axios.get(`${BASE_URL}/legislation/`)
             this.billIds = res.data
-
-
         },
-
-
         async getProfileId(){
             const res = await axios.get(`${BASE_URL}/user/`) 
             this.profileId = res.data[0].id
@@ -70,7 +66,6 @@ export default {
                 }
             )
             this.$router.push('/my-legislation')
-
         },
     }
     

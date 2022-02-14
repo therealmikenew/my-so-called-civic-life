@@ -1,24 +1,20 @@
 <template>
-<div>
-    <h2>Most recent federal legislation items in your state</h2>
-    <vs-button @click="showButton">{{this.button_text}}</vs-button>
-
-    <div v-if="this.button_text==='hide'">
-         <div v-for="legis in filteredLegislation" :key=legis.id>
-        <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
+    <div>
+        <h2>Most recent federal legislation items from civic leaders in your state</h2>
+        <vs-button @click="showButton">{{this.button_text}}</vs-button>
+        <div v-if="this.button_text==='hide'">
+            <div v-for="legis in filteredLegislation" :key=legis.id>
+            <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
+        </div>
     </div>
+        <h2>20 most recent federal legislation items</h2>
+        <vs-button @click="showButton20">{{this.button_20_text}}</vs-button>
+        <div v-if="this.button_20_text==='hide'">
+            <div v-for="legis in legislation" :key=legis.id>
+                <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
+            </div>
+        </div>
     </div>
-
-    <h2>20 most recent federal legislation items</h2>
-    <vs-button @click="showButton20">{{this.button_20_text}}</vs-button>
-
-    <div v-if="this.button_20_text==='hide'">
-         <div v-for="legis in legislation" :key=legis.id>
-        <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
-    </div>
-    </div>
-</div>
-    
 </template>
 
 <script>
@@ -55,7 +51,6 @@ export default {
             })
             this.legislation = res.data.results[0].bills
             this.filteredLegislation = this.legislation.filter((state) => state.sponsor_state === this.profileState )
-
         },
 
         showButton20(){

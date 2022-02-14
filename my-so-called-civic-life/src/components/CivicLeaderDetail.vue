@@ -1,21 +1,6 @@
 <template>
-
-
     <div>
         <h1>{{repName}}</h1>
-
-
-
-        <div v-if='repInfo.photoUrl'>
-        <img :src="repInfo.photoUrl">
-    </div>
-
-     <h4>{{repInfo.party}}</h4>
-        <div v-for='url in repUrls' :key='url.id'>
-               <a v-bind:href='url' target="_blank">{{url}}</a>
-        </div>
-
-
         <div v-for='bill in repBills' :key='bill.id'>
             <h2>{{bill.short_title}}</h2>
             <h3>Date introduced: {{bill.introduced_date}}</h3>
@@ -54,7 +39,6 @@ export default {
             let last_name = this.$route.params.civic_leader_id.split(' ')
             let member = this.repInfo.filter((entry) =>  entry.last_name === last_name[last_name.length - 1])
             this.repDetails = member
-            console.log(this.repDetails)
             this.repId = member[0].id
             const resp = await axios.get(`https://api.propublica.org/congress/v1/members/${this.repId}/bills/introduced.json`, {
                 headers: {

@@ -1,14 +1,11 @@
 <template>
-<div>
-    <h1>My Actions</h1>
-    <vs-button @click="goToActionForm">Create New Action</vs-button>
-    <div v-for='action in actions' :key='action.id'>
-        <h2 @click="selectAction(action.id)">{{action.description}}</h2>
+    <div>
+        <h1>My Actions</h1>
+        <vs-button @click="goToActionForm">Create New Action</vs-button>
+        <div v-for='action in actions' :key='action.id'>
+            <h2 @click="selectAction(action.id)">{{action.description}}</h2>
+        </div>
     </div>
-</div>
-
-
-    
 </template>
 
 <script>
@@ -33,8 +30,6 @@ export default {
         goToActionForm(){
             this.$router.push('/action-form')
         }
-
-    }
-    
+    }    
 }
 </script>

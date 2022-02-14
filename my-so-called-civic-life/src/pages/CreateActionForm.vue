@@ -1,18 +1,12 @@
 <template>
-
-
-<div>
-    <h1>Action Form</h1>
-    <form  v-on:submit.prevent='handleSubmit'>
-        <vs-input v-model="description"
-        type="text" placeholder="Title of action item" />
-        <vs-input  type="text" placeholder="Notes" v-model="notes"   />
-        <vs-button>Enter Action Item</vs-button>
-
-    </form>
-</div>
-
-    
+    <div>
+        <h1>Action Form</h1>
+        <form v-on:submit.prevent='handleSubmit'>
+            <vs-input v-model="description" type="text" placeholder="Title of action item" />
+            <vs-input  type="text" placeholder="Notes" v-model="notes"   />
+            <vs-button>Enter Action Item</vs-button>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -30,7 +24,6 @@ export default {
         this.getProfile()
     },
     methods: {
-// to get user_id
          async getProfile(){
             const res = await axios.get(`${BASE_URL}/user/`) 
             this.profileId = res.data[0].id
@@ -43,9 +36,6 @@ export default {
             let year = currentDate.getFullYear()
             this.date = `${mm}-${dd}-${year}`
             this.createAction()
-            
-            
-
         },
         async createAction() {
             await axios.post(`${BASE_URL}/action/`, {

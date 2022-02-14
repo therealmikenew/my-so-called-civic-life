@@ -18,7 +18,6 @@
                 :value="city"
                 name="city"/>
 
-
                 <select @change="handleCreateFormChange($event)" name="state" id="state">
                     <option value="none">Select state</option>
                     <option value="AL">AL</option>
@@ -120,13 +119,10 @@ export default {
 
 
 <style scoped>
-
 .form {
     display: grid;
     grid-template-columns: 1fr;
     margin: 10px;
     padding: 10px;
-    
 }
-
 </style>
