@@ -1,9 +1,13 @@
 <template>
     <nav class="navbar">
-        <router-link to='/' name='Home'>Home</router-link>
-        <router-link to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
+        <div class='title'>My So-Called Civic Life</div>
+        <div class='routes'>
+            <router-link to='/' name='Home'>Home</router-link>
+        <router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
         <router-link to='/my-actions' name='MyActions'>My Actions</router-link>
         <router-link to='/search' name='Search'>Search</router-link>
+        </div>
+        
     </nav>
 </template>
 
@@ -16,15 +20,27 @@ export default {
 
 <style scoped>
 
-
-
 .navbar{
-    background: rgb(149, 244, 149);
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-    width: 100%;
+  
+  width: 100%;
+  background-color: #b23a48;
+  height: 50px;
+ 
+  
 }
+
+.title{
+    display: flex;
+    justify-content: flex-start;
+    color: aliceblue;
+}
+ .routes {
+     display: flex;
+     justify-content: flex-end;
+     text-decoration: none;
+ }
+
+
+
 
 </style>

@@ -115,7 +115,6 @@ export default {
         async getCityRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=locality&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.cityRep = res.data.officials
-            console.log(this.cityRep)
         },
 
         async getStateSen(){

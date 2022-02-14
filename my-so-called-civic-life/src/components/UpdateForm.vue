@@ -17,11 +17,9 @@
                 <input   @input="handleFormChange($event)" type="text" placeholder="City"
                 :value="city"
                 name="city"/>
-                <!-- <input  @input="handleFormChange($event)" type="text" placeholder="State"
-                :value="state"
-                name="state"/> -->
-
+                
                 <select @change="handleFormChange($event)" name="state" id="state" :value='state'>
+                    <option value="none">Select state</option>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
                     <option value="AZ">AZ</option>

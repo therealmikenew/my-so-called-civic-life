@@ -23,6 +23,7 @@
                 name="state"/> -->
 
                 <select @change="handleCreateFormChange($event)" name="state" id="state">
+                    <option value="none">Select state</option>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
                     <option value="AZ">AZ</option>
@@ -83,9 +84,6 @@
                     <option value="WI">WI</option>
                     <option value="WY">WY</option>  
                 </select>
-
-
-
 
                 <input  @input="handleCreateFormChange($event)" type="number" placeholder="Zip code"
                 :value="zip_code"

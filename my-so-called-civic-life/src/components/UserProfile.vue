@@ -1,8 +1,9 @@
 <template>
     <div>
         <div v-if='profile && !update'>
-            <h1>User Profile</h1>
+            
             <h3>{{profile.first_name}} {{profile.last_name}}</h3>
+            <img :src="profile.profile_URL">
             <h3>{{profile.street_address}}</h3>
             <h3>{{profile.city}} {{profile.state}}</h3>
             <h3>{{profile.zip_code}}</h3>
