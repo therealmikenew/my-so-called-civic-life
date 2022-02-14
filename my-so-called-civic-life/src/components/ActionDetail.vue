@@ -22,7 +22,7 @@ export default {
     methods: {
         handleDelete(){
             this.deleteAction()
-            //this.$router.push(`/my-actions`)
+            this.$router.push(`/my-actions`)
         },
 
         async getAction(){

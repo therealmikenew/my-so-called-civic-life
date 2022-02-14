@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>My So-Called Civic Life</h1>
+    <h1>My So-Called Civic Life </h1>
 
     <p>My So-Called Civic Life is designed to help users identify their specific federal, state, and local public servants, and to see what they are up to–what legislation are they working on? Do they represent your interests and values, etc?</p>
 
