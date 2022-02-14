@@ -48,9 +48,9 @@ The app uses [Google Civic Information API](https://developers.google.com/civic-
 
 ### **_Credits_**
 
-[Google Civic Information API](https://developers.google.com/civic-information)
-[ProPublica Congress API](https://www.propublica.org/datastore/api/propublica-congress-api)
+#### [Google Civic Information API](https://developers.google.com/civic-information)
+#### [ProPublica Congress API](https://www.propublica.org/datastore/api/propublica-congress-api)
 
-Thank you to [Anjolaoluwa Ogunmefun](https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5) for their article on deploying a Vue.js project to Heroku.
+#### Thank you to [Anjolaoluwa Ogunmefun](https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5) for their article on deploying a Vue.js project to Heroku.
 
 
