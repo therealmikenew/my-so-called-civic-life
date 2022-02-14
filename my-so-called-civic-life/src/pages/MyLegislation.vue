@@ -26,7 +26,6 @@ export default {
         async getMyLegislation(){
             const res = await axios.get(`${BASE_URL}/legislation/`)
             this.myTrackedLegislation = res.data
-            console.log(this.myTrackedLegislation)
         },
 
         async deleteMyLegislation(id){

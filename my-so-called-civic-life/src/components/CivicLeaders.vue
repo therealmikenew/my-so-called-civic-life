@@ -31,7 +31,7 @@
     <h3>{{stateSen.name}}</h3>
 
 
-      <div v-if='fedRepOfficials.photoUrl'>
+      <div v-if='stateSen.photoUrl'>
          <img :src="stateSen.photoUrl" >
     </div>
    
@@ -43,8 +43,8 @@
     <h2>My State Representative</h2>
     <h3>{{stateRep.name}}</h3>
 
-     <div v-if='fedRepOfficials.photoUrl'>
-         <img :src="stateRep.photoUrl" >
+     <div v-if='stateRep.photoUrl'>
+         <img :src="stateRep.photoUrl" alt='photo' >
     </div>
 
     
@@ -59,6 +59,9 @@
     <div v-for="city in cityRep" :key='city.id'>
         <h3>{{city.name}}</h3>
         <h4>{{city.party}}</h4>
+        <div v-for='url in city.urls' :key='url.id'>
+             <a v-bind:href='url' target="_blank">{{url}}</a>
+        </div>
     </div>
 </div>
 </template>
@@ -96,6 +99,7 @@ export default {
             this.getStateRep()
             this.getCityRep()
             
+            
         },
         async getFedRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=country&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
@@ -111,11 +115,13 @@ export default {
         async getCityRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}&includeOffices=true&levels=locality&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
             this.cityRep = res.data.officials
+            console.log(this.cityRep)
         },
 
         async getStateSen(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}includeOffices=true&levels=administrativearea1&roles=legislatorUpperBody&key=${GOOGLE_API_KEY}`)
             this.stateSen = res.data.officials[0]
+            
         },
         async getStateRep(){
             const res = await axios.get(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${this.street_address}` + ' ' + `${this.city}includeOffices=true&levels=administrativearea1&roles=legislatorLowerBody&key=${GOOGLE_API_KEY}`)
@@ -130,3 +136,11 @@ export default {
     }
 }
 </script>
+
+
+<style >
+img {
+    width: 200px;
+}
+
+</style>

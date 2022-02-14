@@ -7,7 +7,7 @@
         <h3>Date introduced: {{billDetails.introduced_date}}</h3>
         <h3>Latest major action: {{billDetails.latest_major_action}}</h3>
         <h3>Latest major action date: {{billDetails.latest_major_action_date}}</h3>
-        <h3>{{billDetails.govtrack_url}}</h3>
+        <a v-bind:href='billDetails.govtrack_url' target="_blank">{{billDetails.govtrack_url}}</a>
         <button @click="createLegislation()">Add to My Legislation</button>
     </div>
 </template>

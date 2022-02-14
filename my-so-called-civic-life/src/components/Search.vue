@@ -54,7 +54,6 @@ export default {
                 }
             })
             this.legislation = res.data.results[0].bills
-            console.log(this.legislation)
             this.filteredLegislation = this.legislation.filter((state) => state.sponsor_state === this.profileState )
 
         },
