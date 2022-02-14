@@ -1,7 +1,7 @@
 <template>
 <div>
     <h2>Most recent federal (Congress and Senate) in your state</h2>
-    <button @click="showButton">{{this.button_text}}</button>
+    <vs-button @click="showButton">{{this.button_text}}</vs-button>
 
     <div v-if="this.button_text==='hide'">
          <div v-for="legis in filteredLegislation" :key=legis.id>
@@ -10,7 +10,7 @@
     </div>
 
     <h2>20 most recent federal (Congress and Senate)</h2>
-    <button @click="showButton20">{{this.button_20_text}}</button>
+    <vs-button @click="showButton20">{{this.button_20_text}}</vs-button>
 
     <div v-if="this.button_20_text==='hide'">
          <div v-for="legis in legislation" :key=legis.id>

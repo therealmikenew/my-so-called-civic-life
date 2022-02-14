@@ -3,7 +3,7 @@
         <h1>{{action.description}}</h1>
         <h2>Date entered: {{action.date}}</h2>
         <p>{{action.notes}}</p>
-        <button @click='handleDelete'>Delete Action</button></div>  
+        <vs-button @click='handleDelete'>Delete Action</vs-button></div>  
 </template>
 
 <script>

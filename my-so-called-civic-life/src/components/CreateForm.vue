@@ -18,9 +18,6 @@
                 :value="city"
                 name="city"/>
 
-                <!-- <input  @input="handleCreateFormChange($event)" type="text" placeholder="State"
-                :value="state"
-                name="state"/> -->
 
                 <select @change="handleCreateFormChange($event)" name="state" id="state">
                     <option value="none">Select state</option>

@@ -4,10 +4,10 @@
 <div>
     <h1>Action Form</h1>
     <form  v-on:submit.prevent='handleSubmit'>
-        <input v-model="description"
+        <vs-input v-model="description"
         type="text" placeholder="Title of action item" />
-        <input  type="text" placeholder="Notes" v-model="notes"   />
-        <button>Enter Action Item</button>
+        <vs-input  type="text" placeholder="Notes" v-model="notes"   />
+        <vs-button>Enter Action Item</vs-button>
 
     </form>
 </div>

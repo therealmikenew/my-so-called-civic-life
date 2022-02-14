@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1>My Actions</h1>
-    <button @click="goToActionForm">Create New Action</button>
+    <vs-button @click="goToActionForm">Create New Action</vs-button>
     <div v-for='action in actions' :key='action.id'>
         <h2 @click="selectAction(action.id)">{{action.description}}</h2>
     </div>

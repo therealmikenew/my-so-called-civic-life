@@ -1,14 +1,39 @@
 <template>
-    <nav class="navbar">
-        <div class='title'>My So-Called Civic Life</div>
-        <div class='routes'>
-            <router-link to='/' name='Home'>Home</router-link>
-        <router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
-        <router-link to='/my-actions' name='MyActions'>My Actions</router-link>
-        <router-link to='/search' name='Search'>Search</router-link>
-        </div>
+    <vs-navbar v-model='active' class="navbar">
+
+        <template class='title' #left><p>My So-Called Civic Life</p> </template>
+
+        <template #right>  
+
+            <vs-navbar-item :active="active === 'Home'" id="Home">
+                <router-link to='/' name='Home'>Home</router-link>
+            </vs-navbar-item>
+
+            <vs-navbar-item :active="active === 'My Legislation'" id="My Legislation">
+                <router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
+            </vs-navbar-item>
+
+            <vs-navbar-item :active="active === 'My Actions'" id="My Actions">
+               <router-link to='/my-actions' name='MyActions'>My Actions</router-link>
+            </vs-navbar-item>
+            <vs-navbar-item :active="active === 'Search'" id="Search">
+               <router-link to='/search' name='Search'>Search</router-link>
+            </vs-navbar-item>
+
+
+
+            
+       
         
-    </nav>
+        </template>
+
+
+        
+       
+          
+        
+        
+    </vs-navbar>
 </template>
 
 <script>
@@ -22,23 +47,15 @@ export default {
 
 .navbar{
   
-  width: 100%;
-  background-color: #b23a48;
-  height: 50px;
- 
+  background-color: #3da5f4;
   
+ 
 }
 
-.title{
-    display: flex;
-    justify-content: flex-start;
-    color: aliceblue;
+.title {
+    background-color:antiquewhite;
 }
- .routes {
-     display: flex;
-     justify-content: flex-end;
-     text-decoration: none;
- }
+
 
 
 

@@ -1,14 +1,26 @@
 <template>
     <div>
         <div v-if='profile && !update'>
+
+            <vs-card>
+    <template #title>
+      <h3>{{profile.first_name}} {{profile.last_name}}</h3>
+    </template>
+    <template #img>
+     <img :src="profile.profile_URL">
+    </template>
+    <template #text>
+      <p>{{profile.street_address}}</p>
+            <p>{{profile.city}} {{profile.state}}</p>
+            <p>{{profile.zip_code}}</p>
+            <vs-button @click='toggleUpdate'>Update profile</vs-button>
+            <vs-button @click="handleDelete">Delete profile</vs-button>
+    </template>
+   
+  </vs-card>
+
+
             
-            <h3>{{profile.first_name}} {{profile.last_name}}</h3>
-            <img :src="profile.profile_URL">
-            <h3>{{profile.street_address}}</h3>
-            <h3>{{profile.city}} {{profile.state}}</h3>
-            <h3>{{profile.zip_code}}</h3>
-            <button @click='toggleUpdate'>Update profile</button>
-            <button @click="handleDelete">Delete profile</button>
         </div>
         <div v-else-if='!profile && !update'>
             <CreateForm :first_name="first_name" :last_name="last_name" :profile_URL="profile_URL" :street_address="street_address" :city="city" :state="state" :zip_code=parseInt.zip_code @handleCreateFormChange="handleCreateFormChange" @handleSubmit="handleSubmit" />
@@ -16,7 +28,7 @@
         <div v-else>
             <UpdateForm :first_name="profile.first_name" :last_name="profile.last_name" :profile_URL="profile.profile_URL" :street_address="profile.street_address" :city="profile.city" :state="profile.state" :zip_code='profile.zip_code' @handleFormChange="handleFormChange" @handleUpdate="handleUpdate"/>
             
-            <button @click='toggleUpdate'>Back to Profile</button>
+            <vs-button @click='toggleUpdate'>Back to Profile</vs-button>
 
         </div>
 
@@ -98,6 +110,15 @@ export default {
         },
         async createUser() {
             await axios.post(`${BASE_URL}/user/`, {
+                first_name: this.first_name,
+                last_name: this.last_name,
+                profile_URL: this.profile_URL,
+                street_address: this.street_address,
+                city: this.city,
+                state: this.state,
+                zip_code: this.zip_code
+            })
+            console.log({
                 first_name: this.first_name,
                 last_name: this.last_name,
                 profile_URL: this.profile_URL,
