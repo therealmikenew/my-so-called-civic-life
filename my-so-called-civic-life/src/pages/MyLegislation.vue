@@ -30,7 +30,7 @@ export default {
 
         async deleteMyLegislation(id){
             await axios.delete(`${BASE_URL}/legislation/${id}`)
-            window.location.reload()
+            //window.location.reload()
         },
         goToLegisDetail(bill_number){
             this.$router.push(`/legislation-detail/${bill_number}`)
