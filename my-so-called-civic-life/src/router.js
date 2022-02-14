@@ -8,9 +8,11 @@ import CreateActionForm from "./pages/CreateActionForm";
 import CivicLeaderDetail from "./components/CivicLeaderDetail";
 import FederalSenatorDetail from "./components/FederalSenatorDetail";
 import Search from "./components/Search";
+import About from "./pages/About";
 
 const routes = [
   { path: "/", component: Home, name: "Home" },
+  { path: "/about", component: About, name: "About" },
   { path: "/my-legislation", component: MyLegislation, name: "MyLegislation" },
 
   {

@@ -20,7 +20,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 body {
-  background: rgb(63, 62, 62);
+  background: rgb(0, 4, 14);
 
 }
 

@@ -8,6 +8,9 @@
             <vs-navbar-item :active="active === 'Home'" id="Home">
                 <router-link to='/' name='Home'>Home</router-link>
             </vs-navbar-item>
+            <vs-navbar-item :active="active === 'About'" id="About">
+                <router-link to='/about' name='About'>About</router-link>
+            </vs-navbar-item>
 
             <vs-navbar-item :active="active === 'My Legislation'" id="My Legislation">
                 <router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
@@ -48,12 +51,9 @@ export default {
 .navbar{
   
   background-color: #3da5f4;
+  color:antiquewhite;
   
  
-}
-
-.title {
-    background-color:antiquewhite;
 }
 
 
