@@ -17,7 +17,7 @@
 
     <h2>My Federal Senators</h2>
     <div v-for='fedSen in fedSenOfficials' :key='fedSen.id'>
-        <h3>{{fedSen.name}}</h3>
+        <h3 @click="selectSen(fedSen.name)">{{fedSen.name}}</h3>
             <img :src="fedSen.photoUrl" alt="no photo">
 
         <h4>{{fedSen.party}}</h4>
@@ -123,6 +123,9 @@ export default {
         },
         selectRep(civic_leader_name){
             this.$router.push(`/civic-leader/${civic_leader_name}`)
+        },
+        selectSen(federal_senator_id){
+            this.$router.push(`/federal-senator/${federal_senator_id}`)
         }
     }
 }

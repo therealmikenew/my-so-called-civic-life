@@ -6,6 +6,7 @@ import MyActions from "./pages/MyActions";
 import ActionDetail from "./components/ActionDetail";
 import CreateActionForm from "./pages/CreateActionForm";
 import CivicLeaderDetail from "./components/CivicLeaderDetail";
+import FederalSenatorDetail from "./components/FederalSenatorDetail";
 import Search from "./components/Search";
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: "/civic-leader/:civic_leader_id",
     component: CivicLeaderDetail,
     name: "CivicLeaderDetail",
+  },
+  {
+    path: "/federal-senator/:federal_senator_id",
+    component: FederalSenatorDetail,
+    name: "FederalSenatorDetail",
   },
   { path: "/search", component: Search, name: "Search" },
 ];
