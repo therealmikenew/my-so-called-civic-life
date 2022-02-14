@@ -2,7 +2,7 @@
     <div>
         <h1>My Tracked Legislation</h1>
             <div v-for='myTracked in myTrackedLegislation' :key='myTracked.id'>
-                <h3>{{myTracked.title}}</h3>
+                <h3 @click="goToLegisDetail(myTracked.bill_number)">{{myTracked.title}}</h3>
                 <button @click="deleteMyLegislation(myTracked.id)">Delete</button>
             </div>
     </div>
@@ -26,11 +26,15 @@ export default {
         async getMyLegislation(){
             const res = await axios.get(`${BASE_URL}/legislation/`)
             this.myTrackedLegislation = res.data
+            console.log(this.myTrackedLegislation)
         },
 
         async deleteMyLegislation(id){
             await axios.delete(`${BASE_URL}/legislation/${id}`)
         },
+        goToLegisDetail(bill_number){
+            this.$router.push(`/legislation-detail/${bill_number}`)
+        }
  
 
     }

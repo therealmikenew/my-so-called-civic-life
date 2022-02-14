@@ -34,7 +34,7 @@ export default {
             )
             this.repInfo = res.data.results[0].members
             let last_name = this.$route.params.civic_leader_id.split(' ')
-            let member = this.repInfo.filter((entry) =>  entry.last_name === last_name[1])
+            let member = this.repInfo.filter((entry) =>  entry.last_name === last_name[last_name.length - 1])
             this.repId = member[0].id
             const resp = await axios.get(`https://api.propublica.org/congress/v1/members/${this.repId}/bills/introduced.json`, {
                 headers: {

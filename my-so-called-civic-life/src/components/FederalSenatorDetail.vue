@@ -14,9 +14,6 @@
 <script>
 import axios from 'axios'
 const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
-
-
-
 export default {
     name: 'FederalSenatorDetail',
     data: ()=> ({
@@ -38,7 +35,7 @@ export default {
             })
             this.senInfo = res.data.results[0].members
             let last_name = this.$route.params.federal_senator_id.split(' ')
-            let member = this.senInfo.filter((entry) => entry.last_name === last_name[1])
+            let member = this.senInfo.filter((entry) => entry.last_name === last_name[last_name.length - 1])
             this.senId = member[0].id
             const resp = await axios.get(`https://api.propublica.org/congress/v1/members/${this.senId}/bills/introduced.json`, {
                 headers: {
