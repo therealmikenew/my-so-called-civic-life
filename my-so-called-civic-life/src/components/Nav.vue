@@ -5,11 +5,11 @@
         </template>
 
         <template #right>  
-                <router-link to='/' name='Home'>Home</router-link>
-                <router-link to='/about' name='About'>About</router-link>
-                <router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
-               <router-link to='/my-actions' name='MyActions'>My Actions</router-link>
-               <router-link to='/search' name='Search'>Search</router-link>
+                <vs-button><router-link to='/' name='Home'>Home</router-link></vs-button>
+                <vs-button><router-link to='/about' name='About'>About</router-link></vs-button>
+                <vs-button><router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link></vs-button>
+               <vs-button><router-link to='/my-actions' name='MyActions'>My Actions</router-link></vs-button>
+               <vs-button><router-link to='/search' name='Search'>Search</router-link></vs-button>
         </template>
     </vs-navbar>
 </template>
