@@ -5,21 +5,11 @@
         </template>
 
         <template #right>  
-            <vs-navbar-item :active="active === 'Home'" id="Home">
                 <router-link to='/' name='Home'>Home</router-link>
-            </vs-navbar-item>
-            <vs-navbar-item :active="active === 'About'" id="About">
                 <router-link to='/about' name='About'>About</router-link>
-            </vs-navbar-item>
-            <vs-navbar-item :active="active === 'My Legislation'" id="My Legislation">
                 <router-link  to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
-            </vs-navbar-item>
-            <vs-navbar-item :active="active === 'My Actions'" id="My Actions">
                <router-link to='/my-actions' name='MyActions'>My Actions</router-link>
-            </vs-navbar-item>
-            <vs-navbar-item :active="active === 'Search'" id="Search">
                <router-link to='/search' name='Search'>Search</router-link>
-            </vs-navbar-item>
         </template>
     </vs-navbar>
 </template>

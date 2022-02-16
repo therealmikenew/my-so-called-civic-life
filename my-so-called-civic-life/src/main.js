@@ -7,9 +7,9 @@ import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuesax);
-
 Vue.use(VueRouter);
+
+Vue.use(Vuesax);
 
 new Vue({
   router,
