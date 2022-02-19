@@ -13,7 +13,10 @@
             </template>
             <template #text>
                 <h4>{{fedRepOfficials.party}}</h4>
-                <p v-for='url in fedRepUrls' :key='url.id'><a v-bind:href='url' target="_blank">{{url}}</a></p>
+                <div class='urls'>
+                    <vs-button><a v-bind:href="fedRepUrls[0]" target="_blank">Rep page</a></vs-button>
+                    <vs-button><a v-bind:href="fedRepUrls[1]" target="_blank">Wikipedia</a></vs-button>  
+                </div>                    
             </template>
         </vs-card>
 
@@ -28,7 +31,10 @@
             </template>
             <template #text>
                 <p>{{fedSen.party}}</p>
-                <p v-for='url in fedSen.urls' :key='url.id'><a v-bind:href='url' target="_blank">{{url}}</a></p>
+                <div class='urls'>
+                    <vs-button><a v-bind:href="fedSenUrls[0]" target="_blank">Rep page</a></vs-button>
+                    <vs-button><a v-bind:href="fedSenUrls[1]" target="_blank">Wikipedia</a></vs-button>  
+                </div>  
             </template>
         </vs-card>
     </div>
@@ -159,8 +165,22 @@ export default {
 
 
 <style >
-.img {
-    width: 150px;
+img {
+    width: 75px;
+}
+
+.urls {
+    display: grid;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+vs-card {
+    padding-bottom: 20px;
 }
 
 </style>

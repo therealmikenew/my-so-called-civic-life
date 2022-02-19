@@ -1,8 +1,7 @@
 <template>
     <div >
         <Nav/>
-        
-        <h1>User Panel</h1>
+        <h1 id='title'>My So-Called Profile</h1>
         <div class="container">
             <UserProfile/>
             <CivicLeaders/>
@@ -29,6 +28,10 @@ export default {
 
 <style scoped>
 
+#title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .container {
     display: flex;
     justify-content: space-evenly;

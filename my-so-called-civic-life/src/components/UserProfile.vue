@@ -12,13 +12,10 @@
                     <p>{{profile.street_address}}</p>
                     <p>{{profile.city}} {{profile.state}}</p>
                     <p>{{profile.zip_code}}</p>
-
                     <div class='btn'>
                         <vs-button @click='toggleUpdate'>Update profile</vs-button>
-                    <vs-button @click="handleDelete">Delete profile</vs-button>
+                        <vs-button @click="handleDelete">Delete profile</vs-button>
                     </div>
-                    
-                    
                 </template>
             </vs-card>
         </div>
@@ -112,13 +109,9 @@ export default {
 }
 </script>
 
-
 <style scoped>
 .btn{
     display: grid;
     align-items: center;
-
 }
-
-
 </style>
