@@ -12,8 +12,13 @@
                     <p>{{profile.street_address}}</p>
                     <p>{{profile.city}} {{profile.state}}</p>
                     <p>{{profile.zip_code}}</p>
-                    <vs-button @click='toggleUpdate'>Update profile</vs-button>
+
+                    <div class='btn'>
+                        <vs-button @click='toggleUpdate'>Update profile</vs-button>
                     <vs-button @click="handleDelete">Delete profile</vs-button>
+                    </div>
+                    
+                    
                 </template>
             </vs-card>
         </div>
@@ -53,15 +58,12 @@ export default {
         this.getProfile()     
     },
     methods: {
-
         toggleUpdate(){
             this.update = !this.update
         },
-
         handleUpdate (){
             this.updateUser()
         },
-
         async updateUser (){
             await axios.put(`${BASE_URL}/user/${this.profile.id}`, { 
                 first_name: this.profile.first_name,
@@ -74,23 +76,19 @@ export default {
                 this.toggleUpdate()
                 window.location.reload()
         },
-
         async getProfile(){
             const res = await axios.get(`${BASE_URL}/user/`) 
             this.profile = res.data[0]
         },
         handleFormChange(name, value) {
-            this.profile[name] = value
-           
+            this.profile[name] = value    
         }, 
         handleCreateFormChange(name, value) {
             this[name] = value
         }, 
-       
         handleSubmit() {
             this.createUser()
         },
-
         handleDelete(){
             this.deleteUser()
             window.location.reload()  
@@ -107,13 +105,20 @@ export default {
             })
             window.location.reload()
         },
-
         async deleteUser() {
             await axios.delete(`${BASE_URL}/user/${this.profile.id}`)
         }
-        
     }
-   
 }
 </script>
 
+
+<style scoped>
+.btn{
+    display: grid;
+    align-items: center;
+
+}
+
+
+</style>
