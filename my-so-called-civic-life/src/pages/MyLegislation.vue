@@ -43,11 +43,23 @@ export default {
 
 <style scoped>
 
-@media screen and (max-width: 480px){
-  #title{
+#title{
     padding-top: 50px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
+
+ #container {
+    display: grid;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 70px;
+   
+
+  }
+
+@media screen and (max-width: 480px){
+ 
 
   #container {
     display: grid;

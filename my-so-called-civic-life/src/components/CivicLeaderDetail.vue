@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1>{{repName}}</h1>
-        <div v-for='bill in repBills' :key='bill.id'>
+        <h1 id='title'>{{repName}}</h1>
+        <div id='container' v-for='bill in repBills' :key='bill.id'>
             <h2>{{bill.short_title}}</h2>
             <h3>Date introduced: {{bill.introduced_date}}</h3>
-            <button @click="goToLegisDetail(bill.bill_id)">View Detail</button>
+            <vs-button @click="goToLegisDetail(bill.bill_id)">View Detail</vs-button>
         </div>
     </div>
 </template>
@@ -57,3 +57,41 @@ export default {
     
 }
 </script>
+
+
+<style scoped>
+#title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-bottom: 70px;
+
+  }
+
+@media screen and (max-width: 480px){
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+
+  }
+
+ 
+  
+  
+
+}
+</style>

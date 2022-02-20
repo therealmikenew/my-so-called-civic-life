@@ -1,14 +1,14 @@
 <template>
-    <div>
-        <h1>{{billDetails.short_title}}</h1>
+    <div id='container'>
+        <h1 id='title'>{{billDetails.short_title}}</h1>
         <h2>{{billDetails.title}}</h2>
         <p>Summary: {{billDetails.summary}}</p>
         <h3>Sponsor: {{billDetails.sponsor}}</h3>
         <h3>Date introduced: {{billDetails.introduced_date}}</h3>
         <h3>Latest major action: {{billDetails.latest_major_action}}</h3>
         <h3>Latest major action date: {{billDetails.latest_major_action_date}}</h3>
-        <a v-bind:href='billDetails.govtrack_url' target="_blank">{{billDetails.govtrack_url}}</a>
-        <button @click="createLegislation()">{{buttonText}}</button>
+        <a id='link' v-bind:href='billDetails.govtrack_url' target="_blank">Go to legislation page</a>
+        <vs-button  @click="createLegislation()">{{buttonText}}</vs-button>
     </div>
 </template>
 
@@ -71,3 +71,50 @@ export default {
     
 }
 </script>
+
+
+<style scoped>
+
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-bottom: 50px;
+
+  }
+
+  #link {
+      color: rgb(78, 78, 203);
+  }
+
+  #link:hover {
+    color: rgb(98, 233, 219);
+  }
+@media screen and (max-width: 480px){
+  
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+
+  }
+
+  
+
+ 
+  
+  
+
+}
+
+
+</style>

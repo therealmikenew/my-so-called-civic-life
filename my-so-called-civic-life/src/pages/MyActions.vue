@@ -3,9 +3,9 @@
         <h1 id='title'>My Actions</h1>
         <div id='container'>
             <vs-button @click="goToActionForm">Create New Action</vs-button>
-        <div v-for='action in actions' :key='action.id'>
-            <h2 @click="selectAction(action.id)">{{action.description}}</h2>
-        </div>
+            <div  v-for='action in actions' :key='action.id'>
+                <h2 @click="selectAction(action.id)">{{action.description}}</h2>
+            </div>
         </div>
         
     </div>
@@ -39,11 +39,22 @@ export default {
 
 <style scoped>
 
-@media screen and (max-width: 480px){
-  #title{
+#title{
     padding-top: 50px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
+ #container {
+    display: grid;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 70px;
+   
+
+  }
+
+@media screen and (max-width: 480px){
+  
 
   #container {
     display: grid;

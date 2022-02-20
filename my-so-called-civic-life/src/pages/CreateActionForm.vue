@@ -4,8 +4,8 @@
 
         <div>
         <form id="container" v-on:submit.prevent='handleSubmit'>
-            <vs-input v-model="description" type="text" placeholder="Title of action item" />
-            <vs-input  type="text" placeholder="Notes" v-model="notes"   />
+            <vs-input class='input'  v-model="description"  placeholder="Title of action item" />
+            <vs-input class='input'  v-model="notes"   placeholder="Notes"   />
             <vs-button>Enter Action Item</vs-button>
         </form></div>
         
@@ -69,9 +69,12 @@ export default {
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 50px;
-    margin-bottom: 10px;
 
+  }
+
+  .input {
+      padding-bottom: 30px;
+      color: gray;
   }
 
  

@@ -1,17 +1,17 @@
 <template>
-    <div>
-        <h2>Most recent federal legislation items from civic leaders in your state</h2>
+    <div id='container'>
+        <h2 class='title'>Most recent federal legislation items from civic leaders in your state</h2>
         <vs-button @click="showButton">{{this.button_text}}</vs-button>
         <div v-if="this.button_text==='hide'">
             <div v-for="legis in filteredLegislation" :key=legis.id>
-            <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
+            <h3 class='legis' @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
         </div>
     </div>
-        <h2>20 most recent federal legislation items</h2>
+        <h2 class='title'>20 most recent federal legislation items</h2>
         <vs-button @click="showButton20">{{this.button_20_text}}</vs-button>
         <div v-if="this.button_20_text==='hide'">
             <div v-for="legis in legislation" :key=legis.id>
-                <h3 @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
+                <h3 class='legis' @click="goToLegisDetail(legis.bill_id)">{{legis.short_title}}</h3>
             </div>
         </div>
     </div>
@@ -69,3 +69,51 @@ export default {
     
 }
 </script>
+
+
+
+<style scoped>
+
+ .title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-bottom: 50px;
+
+  }
+
+  .legis {
+      padding-bottom: 40px;
+  }
+
+@media screen and (max-width: 480px){
+ 
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+
+  }
+
+  .legis {
+      padding-bottom: 20px;
+  }
+
+ 
+  
+  
+
+}
+
+</style>

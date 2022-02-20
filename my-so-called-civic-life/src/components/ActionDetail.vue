@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>{{action.description}}</h1>
+    <div id='container'>
+        <h1 id='title'>{{action.description}}</h1>
         <h2>Date entered: {{action.date}}</h2>
         <p>{{action.notes}}</p>
         <vs-button @click='handleDelete'>Delete Action</vs-button></div>  
@@ -35,3 +35,26 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+
+@media screen and (max-width: 480px){
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+  #container {
+   display: grid;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+  }
+  
+
+}
+
+
+</style>
+
