@@ -36,6 +36,18 @@ export default {
     display: flex;
     justify-content: space-evenly;
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: grid;
+    }
+    #title {
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+}
+
 </style>
 
 

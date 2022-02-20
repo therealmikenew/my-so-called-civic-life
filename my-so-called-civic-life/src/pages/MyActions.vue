@@ -1,10 +1,13 @@
 <template>
     <div>
-        <h1>My Actions</h1>
-        <vs-button @click="goToActionForm">Create New Action</vs-button>
+        <h1 id='title'>My Actions</h1>
+        <div id='container'>
+            <vs-button @click="goToActionForm">Create New Action</vs-button>
         <div v-for='action in actions' :key='action.id'>
             <h2 @click="selectAction(action.id)">{{action.description}}</h2>
         </div>
+        </div>
+        
     </div>
 </template>
 
@@ -33,3 +36,29 @@ export default {
     }    
 }
 </script>
+
+<style scoped>
+
+@media screen and (max-width: 480px){
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+
+  }
+
+ 
+  
+  
+
+}
+
+
+</style>

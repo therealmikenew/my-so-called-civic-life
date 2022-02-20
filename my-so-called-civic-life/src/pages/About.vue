@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1>My So-Called Civic Life</h1>
-    <p>
+    <h1 id='title'>My So-Called Civic Life</h1>
+
+    <div id="container"><p>
       My So-Called Civic Life is designed to help users identify their specific
       federal, state, and local public servants, and to see what they are up
       to–what legislation are they working on? Do they represent your interests
@@ -19,6 +20,8 @@
         >ProPublica Congress API</a
       >.
     </p>
+    </div>
+    
   </div>
 </template>
 
@@ -27,3 +30,29 @@ export default {
   name: "About",
 };
 </script>
+
+
+<style scoped>
+
+a{
+    color: rgb(78, 78, 203);
+  }
+  a:hover {
+    color: rgb(98, 233, 219);
+  }
+
+@media screen and (max-width: 480px){
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+  #container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+
+}
+
+
+</style>

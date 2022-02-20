@@ -1,11 +1,14 @@
 <template>
     <div>
-        <h1>Action Form</h1>
-        <form v-on:submit.prevent='handleSubmit'>
+        <h1 id='title'>Action Form</h1>
+
+        <div>
+        <form id="container" v-on:submit.prevent='handleSubmit'>
             <vs-input v-model="description" type="text" placeholder="Title of action item" />
             <vs-input  type="text" placeholder="Notes" v-model="notes"   />
             <vs-button>Enter Action Item</vs-button>
-        </form>
+        </form></div>
+        
     </div>
 </template>
 
@@ -52,3 +55,28 @@ export default {
         
 }
 </script>
+
+<style scoped>
+@media screen and (max-width: 480px){
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  #container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+
+  }
+
+ 
+  
+  
+
+}
+</style>

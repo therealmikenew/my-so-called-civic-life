@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h1>My Tracked Legislation</h1>
-            <div v-for='myTracked in myTrackedLegislation' :key='myTracked.id'>
+        <h1 id='title' >My Tracked Legislation</h1>
+            <div id='container' v-for='myTracked in myTrackedLegislation' :key='myTracked.id'>
                 <h3 @click="goToLegisDetail(myTracked.bill_number)">{{myTracked.title}}</h3>
-                <button @click="deleteMyLegislation(myTracked.id)">Delete</button>
+                <vs-button @click="deleteMyLegislation(myTracked.id)">Remove</vs-button>
             </div>
     </div>
     
@@ -41,5 +41,28 @@ export default {
 }
 </script>
 
+<style scoped>
+
+@media screen and (max-width: 480px){
+  #title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  #container {
+    display: grid;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+
+  }
+
+ 
+  
+  
+
+}
+</style>
 
 
