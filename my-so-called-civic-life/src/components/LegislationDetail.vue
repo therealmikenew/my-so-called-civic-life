@@ -96,7 +96,7 @@ export default {
   #link:hover {
     color: rgb(98, 233, 219);
   }
-@media screen and (max-width: 480px){
+@media screen and (max-width: 380px){
   
 
   #container {

@@ -74,7 +74,7 @@ export default {
 
   }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 380px){
   #title{
     padding-top: 50px;
     padding-bottom: 10px;

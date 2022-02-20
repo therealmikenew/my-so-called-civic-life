@@ -53,7 +53,7 @@ export default {
 
   }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 380px){
   
 
   #container {

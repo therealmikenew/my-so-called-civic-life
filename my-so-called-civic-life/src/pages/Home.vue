@@ -37,9 +37,10 @@ export default {
     justify-content: space-evenly;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 380px) {
     .container {
         display: grid;
+        align-content: center;
     }
     #title {
     padding-top: 50px;
