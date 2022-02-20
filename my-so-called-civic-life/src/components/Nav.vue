@@ -1,16 +1,14 @@
 <template>
     <vs-navbar v-model='active' class="navbar">
-        <!-- <template class='title' #left>
-            <p>My So-Called Civic Life</p> 
-        </template> -->
 
+        <template #right>
+             <router-link class='router-link' to='/' name='Home'>Home</router-link>
+            <router-link class='router-link' to='/about' name='About'>About</router-link>
+            <router-link  class='router-link' to='/my-legislation' name='MyLegislation'>My Legislation</router-link>
+            <router-link class='router-link' to='/my-actions' name='MyActions'>My Actions</router-link>
+            <router-link class='router-link' to='/search' name='Search'>Search</router-link>
+        </template>
        
-                <vs-button><router-link class='router-link' to='/' name='Home'>Home</router-link></vs-button>
-                <vs-button><router-link class='router-link' to='/about' name='About'>About</router-link></vs-button>
-                <vs-button><router-link  class='router-link' to='/my-legislation' name='MyLegislation'>My Legislation</router-link></vs-button>
-               <vs-button><router-link class='router-link' to='/my-actions' name='MyActions'>My Actions</router-link></vs-button>
-               <vs-button><router-link class='router-link' to='/search' name='Search'>Search</router-link></vs-button>
-        
     </vs-navbar>
 </template>
 
@@ -24,16 +22,23 @@ export default {
 <style scoped>
 .navbar{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: #560bad;
+    color:antiquewhite;
+}
 
-  background-color: #560bad;
-  color:antiquewhite;
-  /* height: 200px; */
+#container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .router-link{
+     display: flex;
+    justify-content: flex-end;
+    
     text-decoration: none;
     color:antiquewhite;
+    padding-left: 7px;
 }
 
 </style>

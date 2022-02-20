@@ -41,11 +41,12 @@ export default {
     .container {
         display: grid;
         align-content: center;
+        padding-left: 55px;
     }
-    #title {
-    padding-top: 50px;
-    padding-bottom: 10px;
-}
+        #title {
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
 
 }
 
