@@ -17,7 +17,6 @@
                 <input   @input="handleCreateFormChange($event)" type="text" placeholder="City"
                 :value="city"
                 name="city"/>
-
                 <select @change="handleCreateFormChange($event)" name="state" id="state">
                     <option value="none">Select state</option>
                     <option value="AL">AL</option>
@@ -80,7 +79,6 @@
                     <option value="WI">WI</option>
                     <option value="WY">WY</option>  
                 </select>
-
                 <input  @input="handleCreateFormChange($event)" type="number" placeholder="Zip code"
                 :value="zip_code"
                 name="zip_code"/>
@@ -91,7 +89,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'CreateForm',
     props: {
@@ -113,7 +110,6 @@ export default {
             this.$emit('handleSubmit')
         }
     }
-
 }
 </script>
 

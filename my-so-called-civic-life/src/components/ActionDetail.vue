@@ -24,7 +24,6 @@ export default {
             this.deleteAction()
             this.$router.push(`/my-actions`)
         },
-
         async getAction(){
              const res = await axios.get(`${BASE_URL}/action/${this.actionId}`)
              this.action = res.data
@@ -37,8 +36,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 @media screen and (max-width: 380px){
   #title{
     padding-top: 50px;
@@ -51,10 +48,6 @@ export default {
     padding-right: 10px;
     padding-bottom: 50px;
   }
-  
-
 }
-
-
 </style>
 

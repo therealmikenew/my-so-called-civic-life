@@ -16,8 +16,6 @@
 import axios from 'axios'
 const PROPUBLICA_API_KEY = process.env.VUE_APP_PROPUBLICA_KEY
 import {BASE_URL} from '../globals'
-
-
 export default {
     name: "LegislationDetail",
     data: ()=> ({
@@ -67,54 +65,35 @@ export default {
             )
             this.$router.push('/my-legislation')
         },
-    }
-    
+    } 
 }
 </script>
 
-
 <style scoped>
-
-  #title{
-    padding-top: 50px;
-    padding-bottom: 10px;
-  }
-
-  #container {
-    display: grid;
-    align-items: center;
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-bottom: 50px;
-
-  }
-
-  #link {
-      color: rgb(78, 78, 203);
-  }
-
-  #link:hover {
-    color: rgb(98, 233, 219);
-  }
-@media screen and (max-width: 380px){
-  
-
-  #container {
-    display: grid;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 50px;
-
-  }
-
-  
-
- 
-  
-  
-
+    #title{
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    #container {
+        display: grid;
+        align-items: center;
+        padding-left: 90px;
+        padding-right: 90px;
+        padding-bottom: 50px;
+    }
+    #link {
+        color: rgb(78, 78, 203);
+    }
+    #link:hover {
+        color: rgb(98, 233, 219);
+    }
+    @media screen and (max-width: 380px){
+    #container {
+        display: grid;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 50px;
+    }
 }
-
-
 </style>

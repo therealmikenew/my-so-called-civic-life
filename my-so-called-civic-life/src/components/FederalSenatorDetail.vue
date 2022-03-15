@@ -43,7 +43,7 @@ export default {
                     }
                 }   
             )
-             this.senBills = resp.data.results[0].bills
+            this.senBills = resp.data.results[0].bills
         },
         goToLegisDetail(bill_id){
             let newBillId = bill_id.split("-")[0]
@@ -54,37 +54,24 @@ export default {
 </script>
 
 <style scoped>
-
  #title{
     padding-top: 50px;
     padding-bottom: 10px;
   }
-
   #container {
     display: grid;
     align-items: center;
     padding-left: 90px;
     padding-right: 90px;
     padding-bottom: 70px;
-
   }
-
-
 @media screen and (max-width: 380px){
- 
-
   #container {
     display: grid;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 50px;
-
   }
-
- 
-  
-  
-
 }
 </style>
